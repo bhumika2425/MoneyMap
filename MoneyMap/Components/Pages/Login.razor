@@ -1,0 +1,58 @@
+﻿@page "/login"
+@using MoneyMap.Components.Layout
+@layout SimpleLayout
+@inject NavigationManager Navigation
+
+<body>
+    <div class="setup-container">
+        <h4 class="login-header">Welcome! Set Up Your Expense Tracker</h4>
+        <form>
+
+            <input id="username" type="text" class="form-control" @bind="loginModel.Username" placeholder="Enter Username" />
+
+            <input id="password" type="password" class="form-control" @bind="loginModel.Password" placeholder="Enter Password" />
+
+
+            <select id="currency" @bind="loginModel.PreferredCurrency" required>
+                <option value="" disabled selected>Select Preferred Currency</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="NPR">NPR</option>
+                <option value="INR">INR</option>
+            </select>
+            <button type="button" class="login-button" @onclick="HandleLogin">Login</button>
+        </form>
+    </div>
+</body>
+
+
+@code {
+    // Create a simple class for the login form data
+    private LoginModel loginModel = new LoginModel();
+
+    // This function handles the login process
+    private void HandleLogin()
+    {
+        if (!string.IsNullOrEmpty(loginModel.Username) &&
+            !string.IsNullOrEmpty(loginModel.Password) &&
+            !string.IsNullOrEmpty(loginModel.PreferredCurrency))
+        {
+            Navigation.NavigateTo("/dashboard");
+            // Simulate a successful login
+            Console.WriteLine($"Login successful for {loginModel.Username} with currency {loginModel.PreferredCurrency}.");
+        }
+        else
+        {
+            // Simulate an error if any field is empty
+            Console.WriteLine("All fields are required!");
+        }
+    }
+
+    // Define the login model class with simple properties
+    public class LoginModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string PreferredCurrency { get; set; }
+    }
+}

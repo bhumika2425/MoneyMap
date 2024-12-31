@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\MoneyMap.styles.css"
     },
     {
+      "Id": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\wwwroot\\css\\LayoutComponentBase.css",
+      "PackagePath": "staticwebassets\\css\\LayoutComponentBase.css"
+    },
+    {
       "Id": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },

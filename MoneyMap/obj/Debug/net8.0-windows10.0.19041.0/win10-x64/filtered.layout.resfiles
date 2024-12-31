@@ -1,5 +1,5 @@
-Components\Layout\MainLayout.razor.css
 Components\Layout\NavMenu.razor.css
+Components\Pages\Login.razor.css
 OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png
@@ -63,5 +63,6 @@ AboutAssets.txt
 wwwroot\css\app.css
 wwwroot\css\bootstrap\bootstrap.min.css
 wwwroot\css\bootstrap\bootstrap.min.css.map
+wwwroot\css\LayoutComponentBase.css
 wwwroot\favicon.png
 wwwroot\index.html
