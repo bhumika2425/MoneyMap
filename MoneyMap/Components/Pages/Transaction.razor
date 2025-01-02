@@ -1,0 +1,138 @@
+﻿@page "/transaction"
+@using MoneyMap.Components.Layout
+@layout MainLayout
+@inject NavigationManager Navigation
+@using System.Text.Json
+@using MoneyMap.Components.Models
+@using System.IO
+
+<div class="main-container">
+    <div class="content">
+        <h3>Transactions</h3>
+        <div class="filters">
+            <label for="date-range">Date Range:</label>
+            <input type="date" id="date-range-start" name="start" @bind="startDate">
+            <input type="date" id="date-range-end" name="end" @bind="endDate">
+            <button @onclick="ApplyFilters">Apply</button>
+        </div>
+    </div>
+
+    <div class="transaction-list">
+        <div class="transaction-header">
+            <input type="text" id="search" placeholder="Search by title..." @bind="searchTerm" @oninput="SearchTransactions">
+            <button @onclick="SortTransactions">Sort by Date</button>
+        </div>
+        <table id="transaction-table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Amount</th>
+                    <th>Type</th>
+                    <th>Tags</th>
+                    <th>Notes</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var transaction in filteredTransactions)
+                {
+                    <tr>
+                        <td>@transaction.Date.ToString("yyyy-MM-dd")</td>
+                        <td>@transaction.Title</td>
+                        <td>@transaction.Amount</td>
+                        <td>@transaction.Type</td>
+                        <td>@transaction.Tags</td>
+                        <td>@transaction.Notes</td>
+                        <td>
+                            <button @onclick="() => EditTransaction(transaction.Id)">Edit</button>
+                            <button @onclick="() => DeleteTransaction(transaction.Id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <button class="addTransactionButton" @onclick="HandleAddButton">
+        Add Transaction
+    </button>
+
+</div>
+
+@code {
+    private List<TransactionModel> transactions = new List<TransactionModel>();
+    private List<TransactionModel> filteredTransactions = new List<TransactionModel>();
+    private string searchTerm = string.Empty;
+    private DateTime? startDate = null;
+    private DateTime? endDate = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadTransactions();
+    }
+
+    private async Task LoadTransactions()
+    {
+        var filePath = Path.Combine(AppContext.BaseDirectory, "Components", "Data", "transactions.json");
+
+        if (File.Exists(filePath))
+        {
+            var json = await File.ReadAllTextAsync(filePath);
+            if (!string.IsNullOrWhiteSpace(json))
+            {
+                transactions = JsonSerializer.Deserialize<List<TransactionModel>>(json) ?? new List<TransactionModel>();
+                filteredTransactions = new List<TransactionModel>(transactions);  // Initially display all transactions
+            }
+        }
+    }
+
+    private void ApplyFilters()
+    {
+        // Apply date range filter
+        filteredTransactions = transactions.Where(t =>
+            (!startDate.HasValue || t.Date >= startDate.Value) &&
+            (!endDate.HasValue || t.Date <= endDate.Value)
+        ).ToList();
+
+        // Apply search filter after date filtering
+        SearchTransactions();
+    }
+
+    private void SearchTransactions()
+    {
+        filteredTransactions = filteredTransactions.Where(t =>
+            string.IsNullOrEmpty(searchTerm) || t.Title.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)
+        ).ToList();
+    }
+
+    private void SortTransactions()
+    {
+        filteredTransactions = filteredTransactions.OrderByDescending(t => t.Date).ToList();
+    }
+
+    private void HandleAddButton()
+    {
+        Navigation.NavigateTo("/add-transaction");
+    }
+
+    private void EditTransaction(string transactionId)
+    {
+        // Implement editing logic here
+    }
+
+    private void DeleteTransaction(string transactionId)
+    {
+        transactions.RemoveAll(t => t.Id == transactionId);
+        filteredTransactions = new List<TransactionModel>(transactions);  // Refresh filtered list
+        SaveTransactions();  // Save the updated list to the file
+    }
+
+    private async void SaveTransactions()
+    {
+        var filePath = Path.Combine(AppContext.BaseDirectory, "Components", "Data", "transactions.json");
+        var updatedJson = JsonSerializer.Serialize(transactions);
+        await File.WriteAllTextAsync(filePath, updatedJson);
+    }
+}

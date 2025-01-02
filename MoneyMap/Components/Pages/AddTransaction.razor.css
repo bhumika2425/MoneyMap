@@ -1,0 +1,83 @@
+﻿.main-container {
+    margin-left: 230px;
+    max-width: 600px;
+    border: 1px solid #d1d3d4;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #2C3E50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    color: #2C3E50;
+}
+
+select,
+input,
+textarea {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #BDC3C7;
+    border-radius: 5px;
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #03cc8c;
+    }
+
+.hidden {
+    display: none;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-button {
+    background-color: #16a085;
+    color: white;
+}
+
+    .save-button:hover {
+        background-color: #16a085;
+    }
+
+.cancel-button {
+    background-color: #e6e7e9;
+    color: #2C3E50;
+}
+
+    .cancel-button:hover {
+        background-color: #d1d3d4;
+    }

@@ -206,3 +206,8 @@ C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041
 C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
 C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MoneyMap.sourcelink.json
 C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\Login.razor.rz.scp.css
+C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\Dashboard.razor.rz.scp.css
+C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\Home.razor.rz.scp.css
+C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\Transaction.razor.rz.scp.css
+C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\AddTransaction.razor.rz.scp.css
+C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Components\Data\transaction.json

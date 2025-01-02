@@ -1,104 +1,181 @@
 /* /Components/Layout/NavMenu.razor.rz.scp.css */
-.navbar-toggler[b-ubleqgpcxs] {
-    appearance: none;
-    cursor: pointer;
-    width: 3.5rem;
-    height: 2.5rem;
-    color: white;
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") no-repeat center/1.75rem rgba(255, 255, 255, 0.1);
+/* Style for the navigation menu */
+.side-nav[b-ubleqgpcxs] {
+    width: 230px;
+    height: 100vh;
+    background-color: #16a085;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; /* Space for the top navbar */
 }
 
-    .navbar-toggler:checked[b-ubleqgpcxs] {
-        background-color: rgba(255, 255, 255, 0.5);
-    }
-
-.top-row[b-ubleqgpcxs] {
-    height: 3.5rem;
-    background-color: rgba(0,0,0,0.4);
-}
-
-.navbar-brand[b-ubleqgpcxs] {
-    font-size: 1.1rem;
-}
-
-.bi[b-ubleqgpcxs] {
-    display: inline-block;
-    position: relative;
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.75rem;
-    top: -1px;
-    background-size: cover;
-}
-
-.bi-house-door-fill-nav-menu[b-ubleqgpcxs] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-house-door-fill' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z'/%3E%3C/svg%3E");
-}
-
-.bi-plus-square-fill-nav-menu[b-ubleqgpcxs] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-plus-square-fill' viewBox='0 0 16 16'%3E%3Cpath d='M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z'/%3E%3C/svg%3E");
-}
-
-.bi-list-nested-nav-menu[b-ubleqgpcxs] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-list-nested' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
-}
-
-.nav-item[b-ubleqgpcxs] {
-    font-size: 0.9rem;
-    padding-bottom: 0.5rem;
-}
-
-    .nav-item:first-of-type[b-ubleqgpcxs] {
-        padding-top: 1rem;
-    }
-
-    .nav-item:last-of-type[b-ubleqgpcxs] {
-        padding-bottom: 1rem;
-    }
-
-    .nav-item[b-ubleqgpcxs]  a {
-        color: #d7d7d7;
-        border-radius: 4px;
-        height: 3rem;
+    .side-nav .nav-link[b-ubleqgpcxs] {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 15px;
+        font-size: 16px;
         display: flex;
         align-items: center;
-        line-height: 3rem;
     }
 
-        .nav-item[b-ubleqgpcxs]  a.active {
-            background-color: rgba(255,255,255,0.37);
-            color: white;
+        .side-nav .nav-link:hover[b-ubleqgpcxs] {
+            background-color: #495057;
+            color: #ffffff;
         }
 
-        .nav-item[b-ubleqgpcxs]  a:hover {
-            background-color: rgba(255,255,255,0.1);
-            color: white;
+        .side-nav .nav-link .bi[b-ubleqgpcxs] {
+            margin-right: 10px;
         }
 
-.nav-scrollable[b-ubleqgpcxs] {
+.navbar-toggler[b-ubleqgpcxs] {
+    display: none; /* Hide the toggler unless needed for responsive design */
+}
+
+.top-row[b-ubleqgpcxs] {
+    background-color: #16a085;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    position: fixed;
+    top: 0;
+    width: 230px;
+    z-index: 10;
+}
+
+.container-fluid .navbar-brand[b-ubleqgpcxs] {
+    font-size: 20px;
+    font-weight: bold;
+}
+/* /Components/Pages/AddTransaction.razor.rz.scp.css */
+.main-container[b-kf21b7leon] {
+    margin-left: 230px;
+    max-width: 600px;
+    border: 1px solid #d1d3d4;
+    padding: 20px;
+}
+
+h1[b-kf21b7leon] {
+    font-size: 24px;
+    color: #2C3E50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form[b-kf21b7leon] {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label[b-kf21b7leon] {
+    font-size: 16px;
+    color: #2C3E50;
+}
+
+select[b-kf21b7leon],
+input[b-kf21b7leon],
+textarea[b-kf21b7leon] {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #BDC3C7;
+    border-radius: 5px;
+    width: 100%;
+}
+
+textarea[b-kf21b7leon] {
+    resize: vertical;
+    min-height: 100px;
+}
+
+    input:focus[b-kf21b7leon],
+    select:focus[b-kf21b7leon],
+    textarea:focus[b-kf21b7leon] {
+        outline: none;
+        border-color: #03cc8c;
+    }
+
+.hidden[b-kf21b7leon] {
     display: none;
 }
 
-.navbar-toggler:checked ~ .nav-scrollable[b-ubleqgpcxs] {
-    display: block;
+.button-group[b-kf21b7leon] {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
-@media (min-width: 641px) {
-    .navbar-toggler[b-ubleqgpcxs] {
-        display: none;
+button[b-kf21b7leon] {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-button[b-kf21b7leon] {
+    background-color: #16a085;
+    color: white;
+}
+
+    .save-button:hover[b-kf21b7leon] {
+        background-color: #16a085;
     }
 
-    .nav-scrollable[b-ubleqgpcxs] {
-        /* Never collapse the sidebar for wide screens */
-        display: block;
-        /* Allow sidebar to scroll for tall menus */
-        height: calc(100vh - 3.5rem);
-        overflow-y: auto;
+.cancel-button[b-kf21b7leon] {
+    background-color: #e6e7e9;
+    color: #2C3E50;
+}
+
+    .cancel-button:hover[b-kf21b7leon] {
+        background-color: #d1d3d4;
     }
+/* /Components/Pages/Dashboard.razor.rz.scp.css */
+.main-container[b-kgb0i96sf8] {
+    margin-left: 230px;
+}
+
+.stats[b-kgb0i96sf8] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the cards */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stat-card[b-kgb0i96sf8] {
+    background-color: #dcf7f1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    min-width: 150px;
+    height: 120px;
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    flex-direction: column; /* Arrange text vertically */
+}
+
+@media (min-width: 600px) {
+    .stat-card[b-kgb0i96sf8] {
+        flex: 0 0 calc(33.33% - 20px); /* 3 cards per row on wider screens */
+    }
+}
+
+@media (max-width: 599px) {
+    .stat-card[b-kgb0i96sf8] {
+        flex: 1 0 100%; /* Stacks cards on smaller screens */
+    }
+}
+/* /Components/Pages/Home.razor.rz.scp.css */
+body[b-v1ptjgar5f] {
 }
 /* /Components/Pages/Login.razor.rz.scp.css */
 body[b-otxoo4jwx2] {
@@ -161,3 +238,95 @@ button[b-otxoo4jwx2] {
     button:hover[b-otxoo4jwx2] {
         background-color: #16a085;
     }
+
+    button:active[b-otxoo4jwx2] {
+        background-color: darkgreen;
+    }
+
+/* /Components/Pages/Transaction.razor.rz.scp.css */
+.main-container[b-f0v403rao6] {
+    margin-left: 230px;
+}
+
+.content[b-f0v403rao6] {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Place h3 and filters at opposite ends */
+    gap: 20px; /* Space between h3 and filters */
+    margin-bottom: 20px;
+}
+
+.filters[b-f0v403rao6] {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    gap: 10px; /* Add spacing between elements */
+    margin-top: 10px; /* Add some space above the filters */
+}
+
+    .filters label[b-f0v403rao6] {
+        margin-right: 5px; /* Optional: Add a little space after the label */
+    }
+
+    .filters input[b-f0v403rao6] {
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .filters button[b-f0v403rao6] {
+        padding: 5px 10px;
+        background-color: #16a085;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .filters button:hover[b-f0v403rao6] {
+            background-color: #13876b;
+        }
+
+.transaction-list[b-f0v403rao6] {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-header[b-f0v403rao6] {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+table[b-f0v403rao6] {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th[b-f0v403rao6],
+    table td[b-f0v403rao6] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    /* Change the table header color to grey */
+    table th[b-f0v403rao6] {
+        background-color: grey; /* Light Grey */
+        color: white;
+    }
+
+.addTransactionButton[b-f0v403rao6] {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    background-color: #16a085;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

@@ -7,12 +7,8 @@
     <div class="setup-container">
         <h4 class="login-header">Welcome! Set Up Your Expense Tracker</h4>
         <form>
-
             <input id="username" type="text" class="form-control" @bind="loginModel.Username" placeholder="Enter Username" />
-
             <input id="password" type="password" class="form-control" @bind="loginModel.Password" placeholder="Enter Password" />
-
-
             <select id="currency" @bind="loginModel.PreferredCurrency" required>
                 <option value="" disabled selected>Select Preferred Currency</option>
                 <option value="USD">USD</option>
@@ -21,34 +17,36 @@
                 <option value="INR">INR</option>
             </select>
             <button type="button" class="login-button" @onclick="HandleLogin">Login</button>
+
+            @if (showErrorMessage)
+            {
+                <div class="error-message">
+                    <p>Incorrect username, password, or currency. Please try again.</p>
+                </div>
+            }
         </form>
     </div>
 </body>
 
-
 @code {
-    // Create a simple class for the login form data
     private LoginModel loginModel = new LoginModel();
+    private bool showErrorMessage = false; // Flag to control error message display
 
-    // This function handles the login process
     private void HandleLogin()
     {
-        if (!string.IsNullOrEmpty(loginModel.Username) &&
-            !string.IsNullOrEmpty(loginModel.Password) &&
-            !string.IsNullOrEmpty(loginModel.PreferredCurrency))
+        if (loginModel.Username == "bhumika" && loginModel.Password == "kc" && loginModel.PreferredCurrency == "NPR")
         {
             Navigation.NavigateTo("/dashboard");
-            // Simulate a successful login
             Console.WriteLine($"Login successful for {loginModel.Username} with currency {loginModel.PreferredCurrency}.");
         }
         else
         {
-            // Simulate an error if any field is empty
-            Console.WriteLine("All fields are required!");
+            // Set the flag to show error message
+            showErrorMessage = true;
+            Console.WriteLine("Incorrect username, password, or currency.");
         }
     }
 
-    // Define the login model class with simple properties
     public class LoginModel
     {
         public string Username { get; set; }

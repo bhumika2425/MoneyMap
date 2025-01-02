@@ -1,0 +1,86 @@
+﻿.main-container {
+    margin-left: 230px;
+}
+
+.content {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Place h3 and filters at opposite ends */
+    gap: 20px; /* Space between h3 and filters */
+    margin-bottom: 20px;
+}
+
+.filters {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    gap: 10px; /* Add spacing between elements */
+    margin-top: 10px; /* Add some space above the filters */
+}
+
+    .filters label {
+        margin-right: 5px; /* Optional: Add a little space after the label */
+    }
+
+    .filters input {
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .filters button {
+        padding: 5px 10px;
+        background-color: #16a085;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .filters button:hover {
+            background-color: #13876b;
+        }
+
+.transaction-list {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+    table td {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    /* Change the table header color to grey */
+    table th {
+        background-color: grey; /* Light Grey */
+        color: white;
+    }
+
+.addTransactionButton {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    background-color: #16a085;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

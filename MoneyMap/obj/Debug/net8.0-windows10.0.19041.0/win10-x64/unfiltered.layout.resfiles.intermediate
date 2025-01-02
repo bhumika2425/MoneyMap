@@ -1,5 +1,10 @@
+Components\Data\transaction.json
 Components\Layout\NavMenu.razor.css
+Components\Pages\AddTransaction.razor.css
+Components\Pages\Dashboard.razor.css
+Components\Pages\Home.razor.css
 Components\Pages\Login.razor.css
+Components\Pages\Transaction.razor.css
 OpenSans-Regular.ttf
 appicon.ico
 appiconLargeTile.scale-100.png

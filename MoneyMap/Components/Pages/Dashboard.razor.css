@@ -1,0 +1,38 @@
+﻿.main-container {
+    margin-left: 230px;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the cards */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    background-color: #dcf7f1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1;
+    text-align: center;
+    min-width: 150px;
+    height: 120px;
+    display: flex; /* Flexbox for centering */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    flex-direction: column; /* Arrange text vertically */
+}
+
+@media (min-width: 600px) {
+    .stat-card {
+        flex: 0 0 calc(33.33% - 20px); /* 3 cards per row on wider screens */
+    }
+}
+
+@media (max-width: 599px) {
+    .stat-card {
+        flex: 1 0 100%; /* Stacks cards on smaller screens */
+    }
+}

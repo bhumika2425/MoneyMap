@@ -1,0 +1,86 @@
+.main-container[b-f0v403rao6] {
+    margin-left: 230px;
+}
+
+.content[b-f0v403rao6] {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: space-between; /* Place h3 and filters at opposite ends */
+    gap: 20px; /* Space between h3 and filters */
+    margin-bottom: 20px;
+}
+
+.filters[b-f0v403rao6] {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    gap: 10px; /* Add spacing between elements */
+    margin-top: 10px; /* Add some space above the filters */
+}
+
+    .filters label[b-f0v403rao6] {
+        margin-right: 5px; /* Optional: Add a little space after the label */
+    }
+
+    .filters input[b-f0v403rao6] {
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .filters button[b-f0v403rao6] {
+        padding: 5px 10px;
+        background-color: #16a085;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .filters button:hover[b-f0v403rao6] {
+            background-color: #13876b;
+        }
+
+.transaction-list[b-f0v403rao6] {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-header[b-f0v403rao6] {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+table[b-f0v403rao6] {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th[b-f0v403rao6],
+    table td[b-f0v403rao6] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        text-align: center;
+    }
+
+    /* Change the table header color to grey */
+    table th[b-f0v403rao6] {
+        background-color: grey; /* Light Grey */
+        color: white;
+    }
+
+.addTransactionButton[b-f0v403rao6] {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    padding: 10px 20px;
+    background-color: #16a085;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

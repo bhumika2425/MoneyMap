@@ -1,20 +1,50 @@
 ﻿@page "/dashboard"
 @using MoneyMap.Components.Layout
 @layout MainLayout
-
-
 @inject NavigationManager Navigation
 
+<div class="main-container">
+    <h3>Dashboard</h3>
 
-
-
-<NavBar />  @* This includes the NavBar component *@
-
-<h3>Welcome to the Dashboard</h3>
-
-<div>
-    <p>Your content for the dashboard goes here!</p>
-    <!-- Add more content for your dashboard here -->
+    <section class="stats">
+        <div class="stat-card">
+            <h3>Total Inflows</h3>
+            <p id="total-inflows">$0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Total Outflows</h3>
+            <p id="total-outflows">$0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Total Debts</h3>
+            <p id="total-debts">$0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Cleared Debts</h3>
+            <p id="cleared-debts">$0</p>
+        </div>
+        <div class="stat-card">
+            <h3>Remaining Debts</h3>
+            <p id="remaining-debts">$0</p>
+        </div>
+    </section>
+    <section class="transactions">
+        <h3 style="margin-top: 50px;">Latest Transactions (5)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Tags</th>
+                </tr>
+            </thead>
+            <tbody id="transactions-list">
+                <!-- Dynamic rows will be inserted here -->
+            </tbody>
+        </table>
+    </section>
 </div>
 
 @code {
