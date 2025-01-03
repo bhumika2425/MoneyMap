@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\pages\\login.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\components\\pages\\login.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\pages\\addtransaction.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\components\\pages\\addtransaction.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\pages\\addtransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\components\\pages\\addtransaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\pages\\transaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\components\\pages\\transaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\components\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\pages\\login.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\components\\pages\\login.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\layout\\navmenu.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\wwwroot\\css\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\pages\\transaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|solutionrelative:moneymap\\components\\pages\\transaction.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC45387A-C8B6-48C9-A8E1-A5B8A045078C}|MoneyMap\\MoneyMap.csproj|c:\\users\\bhumi\\source\\repos\\moneymap\\moneymap\\components\\models\\transactionmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,11 +102,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "MoneyMap\\Components\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Models\\LoginModel.cs",
+              "RelativeToolTip": "MoneyMap\\Components\\Models\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-03T06:45:48.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "LayoutComponentBase.css",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\wwwroot\\css\\LayoutComponentBase.css",
               "RelativeDocumentMoniker": "MoneyMap\\wwwroot\\css\\LayoutComponentBase.css",
@@ -110,11 +127,12 @@
               "RelativeToolTip": "MoneyMap\\wwwroot\\css\\LayoutComponentBase.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-02T10:12:30.906Z"
+              "WhenOpened": "2025-01-02T10:12:30.906Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "transaction.json",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Data\\transaction.json",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Data\\transaction.json",
@@ -126,7 +144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "app.css",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\wwwroot\\css\\app.css",
               "RelativeDocumentMoniker": "MoneyMap\\wwwroot\\css\\app.css",
@@ -138,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "TransactionModel.cs",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Models\\TransactionModel.cs",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Models\\TransactionModel.cs",
@@ -150,31 +168,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AddTransaction.razor.css",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\AddTransaction.razor.css",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\AddTransaction.razor.css",
-              "ToolTip": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\AddTransaction.razor.css",
-              "RelativeToolTip": "MoneyMap\\Components\\Pages\\AddTransaction.razor.css",
-              "ViewState": "AgIAADYAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\AddTransaction.razor.css*",
+              "RelativeToolTip": "MoneyMap\\Components\\Pages\\AddTransaction.razor.css*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-02T08:07:34.561Z"
+              "WhenOpened": "2025-01-02T08:07:34.561Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AddTransaction.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\AddTransaction.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\AddTransaction.razor",
               "ToolTip": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\AddTransaction.razor",
               "RelativeToolTip": "MoneyMap\\Components\\Pages\\AddTransaction.razor",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAABEAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAACwAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-02T08:07:09.084Z"
+              "WhenOpened": "2025-01-02T08:07:09.084Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Transaction.razor.css",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Transaction.razor.css",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Transaction.razor.css",
@@ -186,7 +206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\wwwroot\\index.html",
               "RelativeDocumentMoniker": "MoneyMap\\wwwroot\\index.html",
@@ -198,19 +218,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "Transaction.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Transaction.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Transaction.razor",
               "ToolTip": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Transaction.razor",
               "RelativeToolTip": "MoneyMap\\Components\\Pages\\Transaction.razor",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAYwIoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-01-02T07:21:56.211Z"
+              "WhenOpened": "2025-01-02T07:21:56.211Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "NavMenu.razor.css",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Layout\\NavMenu.razor.css",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Layout\\NavMenu.razor.css",
@@ -222,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Dashboard.razor.css",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Dashboard.razor.css",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Dashboard.razor.css",
@@ -234,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Home.razor.css",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Home.razor.css",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Home.razor.css",
@@ -246,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Weather.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Weather.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Weather.razor",
@@ -258,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "SimpleLayout.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Layout\\SimpleLayout.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Layout\\SimpleLayout.razor",
@@ -270,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "Counter.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Counter.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Counter.razor",
@@ -282,7 +303,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Dashboard.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Dashboard.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Dashboard.razor",
@@ -294,20 +315,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Login.razor.css",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Login.razor.css",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Login.razor.css",
-              "ToolTip": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Login.razor.css*",
-              "RelativeToolTip": "MoneyMap\\Components\\Pages\\Login.razor.css*",
+              "ToolTip": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Login.razor.css",
+              "RelativeToolTip": "MoneyMap\\Components\\Pages\\Login.razor.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-31T09:50:01.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-31T09:50:01.63Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Home.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Home.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Home.razor",
@@ -319,20 +339,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Login.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Login.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Pages\\Login.razor",
               "ToolTip": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Pages\\Login.razor",
               "RelativeToolTip": "MoneyMap\\Components\\Pages\\Login.razor",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAADMAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-31T09:36:23.703Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "LayoutComponentBase.css",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\wwwroot\\css\\LayoutComponentBase.css",
               "RelativeDocumentMoniker": "MoneyMap\\wwwroot\\css\\LayoutComponentBase.css",
@@ -340,11 +360,12 @@
               "RelativeToolTip": "MoneyMap\\wwwroot\\css\\LayoutComponentBase.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-27T09:58:45.668Z"
+              "WhenOpened": "2024-12-27T09:58:45.668Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Layout\\MainLayout.razor",
@@ -352,11 +373,12 @@
               "RelativeToolTip": "MoneyMap\\Components\\Layout\\MainLayout.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T09:34:46.014Z"
+              "WhenOpened": "2024-12-27T09:34:46.014Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\Users\\bhumi\\source\\repos\\MoneyMap\\MoneyMap\\Components\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "MoneyMap\\Components\\Layout\\NavMenu.razor",
@@ -364,7 +386,8 @@
               "RelativeToolTip": "MoneyMap\\Components\\Layout\\NavMenu.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-27T09:29:16.14Z"
+              "WhenOpened": "2024-12-27T09:29:16.14Z",
+              "EditorCaption": ""
             }
           ]
         }

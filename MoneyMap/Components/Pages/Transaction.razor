@@ -20,6 +20,12 @@
     <div class="transaction-list">
         <div class="transaction-header">
             <input type="text" id="search" placeholder="Search by title..." @bind="searchTerm" @oninput="SearchTransactions">
+            <select id="transaction-type" @bind="selectedTransactionType">
+                <option value="">All</option>
+                <option value="Debit">Debit</option>
+                <option value="Credit">Credit</option>
+                <option value="Debt">Debt</option>
+            </select>
             <button @onclick="SortTransactions">Sort by Date</button>
         </div>
         <table id="transaction-table">
@@ -67,6 +73,7 @@
     private string searchTerm = string.Empty;
     private DateTime? startDate = null;
     private DateTime? endDate = null;
+    private string selectedTransactionType = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
@@ -95,6 +102,14 @@
             (!startDate.HasValue || t.Date >= startDate.Value) &&
             (!endDate.HasValue || t.Date <= endDate.Value)
         ).ToList();
+
+        // Apply transaction type filter
+        if (!string.IsNullOrEmpty(selectedTransactionType))
+        {
+            filteredTransactions = filteredTransactions
+                .Where(t => t.Type.Equals(selectedTransactionType, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
 
         // Apply search filter after date filtering
         SearchTransactions();

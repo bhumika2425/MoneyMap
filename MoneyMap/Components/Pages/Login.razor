@@ -1,5 +1,6 @@
 ﻿@page "/login"
 @using MoneyMap.Components.Layout
+@using MoneyMap.Components.Models
 @layout SimpleLayout
 @inject NavigationManager Navigation
 
@@ -10,21 +11,21 @@
             <input id="username" type="text" class="form-control" @bind="loginModel.Username" placeholder="Enter Username" />
             <input id="password" type="password" class="form-control" @bind="loginModel.Password" placeholder="Enter Password" />
             <select id="currency" @bind="loginModel.PreferredCurrency" required>
-                <option value="" disabled selected>Select Preferred Currency</option>
+                <option value="" disabled>Select Preferred Currency</option>
                 <option value="USD">USD</option>
                 <option value="EUR">EUR</option>
                 <option value="NPR">NPR</option>
                 <option value="INR">INR</option>
             </select>
             <button type="button" class="login-button" @onclick="HandleLogin">Login</button>
-
-            @if (showErrorMessage)
-            {
-                <div class="error-message">
-                    <p>Incorrect username, password, or currency. Please try again.</p>
-                </div>
-            }
         </form>
+
+        @if (showErrorMessage)
+        {
+            <div class="error-message" style="color: red; margin-top: 10px;">
+                <p>Incorrect username, password, or currency. Please try again.</p>
+            </div>
+        }
     </div>
 </body>
 
@@ -34,23 +35,18 @@
 
     private void HandleLogin()
     {
-        if (loginModel.Username == "bhumika" && loginModel.Password == "kc" && loginModel.PreferredCurrency == "NPR")
-        {
-            Navigation.NavigateTo("/dashboard");
-            Console.WriteLine($"Login successful for {loginModel.Username} with currency {loginModel.PreferredCurrency}.");
-        }
-        else
-        {
-            // Set the flag to show error message
-            showErrorMessage = true;
-            Console.WriteLine("Incorrect username, password, or currency.");
-        }
-    }
-
-    public class LoginModel
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string PreferredCurrency { get; set; }
+        Navigation.NavigateTo("/dashboard");
+        
+        // if (loginModel.Username == "bhumika" && loginModel.Password == "kc" && loginModel.PreferredCurrency == "NPR")
+        // {
+        //     Navigation.NavigateTo("/dashboard");
+        //     Console.WriteLine($"Login successful for {loginModel.Username} with currency {loginModel.PreferredCurrency}.");
+        // }
+        // else
+        // {
+        //     Set the flag to show error message
+        //     showErrorMessage = true;
+        //     Console.WriteLine("Incorrect username, password, or currency.");
+        // }
     }
 }

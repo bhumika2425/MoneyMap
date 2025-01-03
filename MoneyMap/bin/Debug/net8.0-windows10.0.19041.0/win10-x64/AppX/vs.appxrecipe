@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-02T11:54:54.291</Modified>
+      <Modified>2025-01-03T07:26:42.678</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MoneyMap.dll">
       <PackagePath>MoneyMap.dll</PackagePath>
-      <Modified>2025-01-02T11:54:17.395</Modified>
+      <Modified>2025-01-03T07:01:43.110</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MoneyMap.exe</PackagePath>
-      <Modified>2025-01-02T11:54:17.476</Modified>
+      <Modified>2025-01-03T07:01:43.110</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -680,11 +680,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\MoneyMap.styles.css">
       <PackagePath>wwwroot\MoneyMap.styles.css</PackagePath>
-      <Modified>2025-01-02T11:54:09.051</Modified>
+      <Modified>2025-01-03T07:26:42.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\MoneyMap.bundle.scp.css">
       <PackagePath>wwwroot\MoneyMap.bundle.scp.css</PackagePath>
-      <Modified>2025-01-02T11:54:09.051</Modified>
+      <Modified>2025-01-03T07:26:42.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
@@ -692,7 +692,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\AddTransaction.razor.css">
       <PackagePath>Components\Pages\AddTransaction.razor.css</PackagePath>
-      <Modified>2025-01-02T08:22:56.263</Modified>
+      <Modified>2025-01-03T07:26:41.630</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\Dashboard.razor.css">
       <PackagePath>Components\Pages\Dashboard.razor.css</PackagePath>
