@@ -1,4 +1,4 @@
-﻿@page "/transaction"
+﻿@page "/transactions"
 @using MoneyMap.Components.Layout
 @layout MainLayout
 @inject NavigationManager Navigation
@@ -129,7 +129,7 @@
 
     private void HandleAddButton()
     {
-        Navigation.NavigateTo("/add-transaction");
+        Navigation.NavigateTo("/add-transactions");
     }
 
     private void EditTransaction(string transactionId)

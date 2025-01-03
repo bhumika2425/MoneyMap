@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-03T07:26:42.678</Modified>
+      <Modified>2025-01-03T10:57:24.205</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2025-01-02T09:46:54.964</Modified>
+      <Modified>2025-01-03T10:38:07.592</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MoneyMap.runtimeconfig.json">
       <PackagePath>MoneyMap.runtimeconfig.json</PackagePath>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MoneyMap.dll">
       <PackagePath>MoneyMap.dll</PackagePath>
-      <Modified>2025-01-03T07:01:43.110</Modified>
+      <Modified>2025-01-03T10:57:23.985</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MoneyMap.exe</PackagePath>
-      <Modified>2025-01-03T07:01:43.110</Modified>
+      <Modified>2025-01-03T10:57:23.993</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -305,6 +305,10 @@
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
       <Modified>2024-12-16T03:48:04.798</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Data\debts.json">
+      <PackagePath>Components\Data\debts.json</PackagePath>
+      <Modified>2025-01-03T10:37:50.302</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Data\transaction.json">
       <PackagePath>Components\Data\transaction.json</PackagePath>
@@ -680,11 +684,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\MoneyMap.styles.css">
       <PackagePath>wwwroot\MoneyMap.styles.css</PackagePath>
-      <Modified>2025-01-03T07:26:42.024</Modified>
+      <Modified>2025-01-03T10:04:18.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\MoneyMap.bundle.scp.css">
       <PackagePath>wwwroot\MoneyMap.bundle.scp.css</PackagePath>
-      <Modified>2025-01-03T07:26:42.024</Modified>
+      <Modified>2025-01-03T10:04:18.517</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
@@ -692,19 +696,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\AddTransaction.razor.css">
       <PackagePath>Components\Pages\AddTransaction.razor.css</PackagePath>
-      <Modified>2025-01-03T07:26:41.630</Modified>
+      <Modified>2025-01-03T07:47:18.260</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\Dashboard.razor.css">
       <PackagePath>Components\Pages\Dashboard.razor.css</PackagePath>
       <Modified>2025-01-02T07:36:47.646</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\Debts.razor.css">
+      <PackagePath>Components\Pages\Debts.razor.css</PackagePath>
+      <Modified>2025-01-03T10:04:17.734</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\Home.razor.css">
       <PackagePath>Components\Pages\Home.razor.css</PackagePath>
-      <Modified>2025-01-02T06:57:02.623</Modified>
+      <Modified>2025-01-03T09:04:00.964</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\Login.razor.css">
       <PackagePath>Components\Pages\Login.razor.css</PackagePath>
-      <Modified>2025-01-02T11:54:08.407</Modified>
+      <Modified>2025-01-03T08:13:57.650</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\Transaction.razor.css">
       <PackagePath>Components\Pages\Transaction.razor.css</PackagePath>

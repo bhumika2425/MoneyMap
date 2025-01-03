@@ -3,14 +3,22 @@
 @layout SimpleLayout
 @inject NavigationManager Navigation
 
-<h1>Hello, world!</h1>
-<button type="button" class="get-started-button" @onclick="getStarted">Get Started</button>
+<body>
 
-Welcome to your new app.
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Take Control of Your Finances with MoneyMap</h1>
+            <p>Track your spending, set budgets, and achieve your financial goals.</p>
+            <a href="#get-started" class="hero-btn" @onclick="NavigateToLogin">Get Started</a>
+        </div>
+    </section>
+</body>
 
 @code {
-    private void getStarted()
+    private void NavigateToLogin()
     {
         Navigation.NavigateTo("/login");
     }
 }
+

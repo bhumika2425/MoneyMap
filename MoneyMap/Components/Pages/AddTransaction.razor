@@ -1,4 +1,4 @@
-﻿@page "/add-transaction"
+﻿@page "/add-transactions"
 @using MoneyMap.Components.Layout
 @using MoneyMap.Components.Models
 @layout MainLayout
@@ -6,65 +6,68 @@
 @inject NavigationManager Navigation
 @using System.Diagnostics
 
-<div class="main-container">
-    <h1 id="form-title">Add Transaction</h1>
-    <form id="transactionForm" @onsubmit="HandleSubmit">
-        <!-- Title Field -->
-        <label for="title">Title</label>
-        <input type="text" id="title" placeholder="Enter Title" required @bind="transaction.Title" />
+<div class="main-main-container">
+    <div class="main-container">
+        <h1 id="form-title">Add Transaction</h1>
+        <form id="transactionForm" @onsubmit="HandleSubmit">
+            <!-- Title Field -->
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="Enter Title" required @bind="transaction.Title" />
 
-        <!-- Date Field -->
-        <label for="transaction-date">Date</label>
-        <input type="date" id="transaction-date" required @bind="transaction.Date" />
+            <!-- Date Field -->
+            <label for="transaction-date">Date</label>
+            <input type="date" id="transaction-date" required @bind="transaction.Date" />
 
-        <!-- Transaction Type Dropdown -->
-        <label for="transaction-type">Transaction Type</label>
-        <select id="transaction-type" required @bind="transaction.Type">
-            <option value="" disabled selected>Select Transaction Type</option>
-            <option value="credit">Credit</option>
-            <option value="debit">Debit</option>
-            <option value="debt">Debt</option>
-        </select>
+            <!-- Transaction Type Dropdown -->
+            <label for="transaction-type">Transaction Type</label>
+            <select id="transaction-type" required @bind="transaction.Type">
+                <option value="" disabled selected>Select Transaction Type</option>
+                <option value="credit">Credit</option>
+                <option value="debit">Debit</option>
+                <option value="debt">Debt</option>
+            </select>
 
-        <!-- Amount Text Field -->
-        <label for="amount">Amount</label>
-        <input type="number" id="amount" placeholder="Enter Amount" required @bind="transaction.Amount" />
+            <!-- Amount Text Field -->
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter Amount" required @bind="transaction.Amount" />
 
-        <!-- Source of Debt Text Field (Visible only for Debt) -->
-        @if (transaction.Type == "debt")
-        {
-            <div id="debt-source-container">
-                <label for="debt-source">Source of Debt</label>
-                <input type="text" id="debt-source" placeholder="Enter Source of Debt" @bind="transaction.DebtSource" />
+            <!-- Source of Debt Text Field (Visible only for Debt) -->
+            @if (transaction.Type == "debt")
+            {
+                <div id="debt-source-container">
+                    <label for="debt-source">Source of Debt</label>
+                    <input type="text" id="debt-source" placeholder="Enter Source of Debt" @bind="transaction.DebtSource" />
+                </div>
+
+                <!-- Due Date Date Picker (Visible only for Debt) -->
+                <div id="due-date-container">
+                    <label for="due-date">Due Date</label>
+                    <input type="date" id="due-date" @bind="transaction.DueDate" />
+                </div>
+            }
+
+            <!-- Tags Multiselect Dropdown -->
+            <label for="tags">Tags</label>
+            <select id="tags" required @bind="transaction.Tags">
+                <option value="" disabled selected>Select tag</option>
+                <option value="rent">Rent</option>
+                <option value="salary">Salary</option>
+                <option value="food">Food</option>
+                <option value="shopping">Shopping</option>
+            </select>
+
+            <!-- Notes Text Area -->
+            <label for="notes">Notes (Optional)</label>
+            <textarea id="notes" placeholder="Enter any notes" @bind="transaction.Notes"></textarea>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button type="submit" class="save-button">Save</button>
+                <button type="button" class="cancel-button" @onclick="Cancel">Cancel</button>
             </div>
+        </form>
+    </div>
 
-            <!-- Due Date Date Picker (Visible only for Debt) -->
-            <div id="due-date-container">
-                <label for="due-date">Due Date</label>
-                <input type="date" id="due-date" @bind="transaction.DueDate" />
-            </div>
-        }
-
-        <!-- Tags Multiselect Dropdown -->
-        <label for="tags">Tags</label>
-        <select id="tags" required @bind="transaction.Tags">
-            <option value="" disabled selected>Select tag</option>
-            <option value="rent">Rent</option>
-            <option value="salary">Salary</option>
-            <option value="food">Food</option>
-            <option value="shopping">Shopping</option>
-        </select>
-
-        <!-- Notes Text Area -->
-        <label for="notes">Notes (Optional)</label>
-        <textarea id="notes" placeholder="Enter any notes" @bind="transaction.Notes"></textarea>
-
-        <!-- Buttons -->
-        <div class="button-group">
-            <button type="submit" class="save-button">Save</button>
-            <button type="button" class="cancel-button" @onclick="Cancel">Cancel</button>
-        </div>
-    </form>
 </div>
 
 @code {
