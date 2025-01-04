@@ -212,3 +212,4 @@ C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041
 C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\AddTransaction.razor.rz.scp.css
 C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\Debts.razor.rz.scp.css
 C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\scopedcss\Components\Pages\AddDebt.razor.rz.scp.css
+C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Newtonsoft.Json.dll

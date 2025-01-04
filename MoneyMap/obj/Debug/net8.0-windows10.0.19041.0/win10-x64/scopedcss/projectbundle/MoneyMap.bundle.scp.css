@@ -275,9 +275,123 @@ button[b-kf21b7leon] {
     }
 }
 /* /Components/Pages/Debts.razor.rz.scp.css */
-.main-container[b-yfrfkzsodw] {
-    margin-left: 230px;
+body[b-yfrfkzsodw] {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+    margin-left: 250px;
 }
+p[b-yfrfkzsodw] {
+    font-size: 35px;
+    font-weight: bolder;
+}
+
+.heading[b-yfrfkzsodw] {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.add-debt-btn[b-yfrfkzsodw] {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+    /* Hover effect */
+    .add-debt-btn:hover[b-yfrfkzsodw] {
+        background-color: darkgreen;
+        transform: translateY(-2px);
+    }
+    /* Focus effect */
+    .add-debt-btn:focus[b-yfrfkzsodw] {
+        outline: none; /* Remove focus outline */
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Add focus ring */
+    }
+
+.summary[b-yfrfkzsodw] {
+    display: flex;
+    justify-content: space-between;
+}
+
+    .summary .card[b-yfrfkzsodw] {
+        background-color: #f1f3f5;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        margin-bottom: 30px;
+        width: 30%;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .summary .card h2[b-yfrfkzsodw] {
+            margin: 0;
+            color: #495057;
+            font-size: 2rem;
+        }
+
+        .summary .card p[b-yfrfkzsodw] {
+            margin: 5px 0 0;
+            font-size: 1.1rem;
+            color: #868e96;
+        }
+
+.summary-description[b-yfrfkzsodw] {
+    color: #495057;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.summary-description[b-yfrfkzsodw] {
+    color: #495057;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+table[b-yfrfkzsodw] {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th[b-yfrfkzsodw],
+td[b-yfrfkzsodw] {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th[b-yfrfkzsodw] {
+    background-color: #4caf50;
+    font-size: 1.1rem;
+    color: white;
+}
+
+.action-btn[b-yfrfkzsodw] {
+    background-color: #a72828;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    .action-btn:hover[b-yfrfkzsodw] {
+        background-color: #218838;
+    }
 /* /Components/Pages/Home.razor.rz.scp.css */
 body[b-v1ptjgar5f] {
     background-color: white;

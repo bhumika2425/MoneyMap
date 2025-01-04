@@ -42,7 +42,7 @@
 </div>
 
 @code {
-    private DebtModel debt = new DebtModel { Date = DateTime.Now };
+    private DebtModel debt = new DebtModel { Date = DateTime.Now, Status="Pending" };
 
     private async Task HandleSubmit()
     {

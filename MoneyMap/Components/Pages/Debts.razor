@@ -1,22 +1,143 @@
 ﻿@page "/debts"
 @using MoneyMap.Components.Layout
 @layout MainLayout
+@using System.Text.Json
+@using MoneyMap.Components.Models
 @inject NavigationManager Navigation
+@using System.Diagnostics
+@using Newtonsoft.Json
 
-<div class="main-main-container">
-    <div class="main-container">
-        <h1>Debts</h1>
-        
-        <button class="add-debt-button" @onclick="NavigateToAddDebt">Add Debt</button>
-
-        
+<body>
+    <div class="heading">
+        <p>Debt Management</p>
+        <button class="add-debt-btn" @onclick="NavigateToAddDebtForm"><i class="bi bi-plus"></i>Add Debt</button>
     </div>
-</div>
-
+    <!-- Summary Section -->
+    <div class="summary">
+        <div class="card">
+            <h2>Rs @totalDebts</h2>
+            <p>Total Debts</p>
+        </div>
+        <div class="card">
+            <h2>Rs @clearedDebts</h2>
+            <p>Cleared Debts</p>
+        </div>
+        <div class="card">
+            <h2>Rs @pendingDebts</h2>
+            <p>Pending Debts</p>
+        </div>
+    </div>
+    <!-- Debt Table Section -->
+    <h2>Your Debts</h2>
+    <p class="summary-description">Here is the list of all your debts. You can track, manage, and clear them as needed.</p>
+    <div class="table-container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Amount(Rs)</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (debts.Count > 0)
+                {
+                    @foreach (var debt in debts)
+                    {
+                        <tr>
+                            <td>@debt.DebtSource</td>
+                            <td>@debt.Amount</td>
+                            <td>@debt.DueDate.ToShortDateString()</td>
+                            <td>
+                                @if (debt.Status == "Pending")
+                                {
+                                    <span style="color: #dc3545;">Pending</span>
+                                }
+                                else
+                                {
+                                    <span style="color: #28a745;">Cleared</span>
+                                }
+                            </td>
+                            <td>
+                                @if (debt.Status == "Pending")
+                                {
+                                    <button class="action-btn" @onclick="() => ClearDebt(debt)">Clear</button>
+                                }
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr class="no-data">
+                        <td colspan="5">No debts available. Please add new debts to keep track of them.</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
 @code {
-    private void NavigateToAddDebt()
+    private List<DebtModel> debts = new List<DebtModel>();
+
+    private decimal totalDebts => debts.Where(d => d.Status != "Cleared").Sum(d => d.Amount);
+    private decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
+    private decimal pendingDebts => totalDebts - clearedDebts;
+
+    protected override async Task OnInitializedAsync()
     {
-      
+        try
+        {
+            var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
+            var filePath = Path.Combine(baseDirectory, "debts.json");
+
+            if (File.Exists(filePath))
+            {
+                var json = await File.ReadAllTextAsync(filePath);
+                debts = string.IsNullOrWhiteSpace(json)
+                    ? new List<DebtModel>()
+                    : JsonConvert.DeserializeObject<List<DebtModel>>(json) ?? new List<DebtModel>();
+            }
+            else
+            {
+                Debug.WriteLine("Debt file does not exist.");
+                debts = new List<DebtModel>();
+            }
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error loading debts: {ex.Message}");
+        }
+    }
+    private void NavigateToAddDebtForm()
+    {
         Navigation.NavigateTo("/add-debts");
+    }
+
+    private void ClearDebt(DebtModel debt)
+    {
+        debt.Status = "Cleared";  // Update the debt status to "Cleared"
+        SaveDebtsToFile();
+        StateHasChanged();  // Trigger re-rendering to update the table
+    }
+
+    private async void SaveDebtsToFile()
+    {
+        try
+        {
+            var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
+            var filePath = Path.Combine(baseDirectory, "debts.json");
+
+            var updatedJson = JsonConvert.SerializeObject(debts, Formatting.Indented);
+            await File.WriteAllTextAsync(filePath, updatedJson);
+
+            Debug.WriteLine($"Debt file successfully updated at {filePath}. Content: {updatedJson}");
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Error saving debts: {ex.Message}");
+        }
     }
 }
