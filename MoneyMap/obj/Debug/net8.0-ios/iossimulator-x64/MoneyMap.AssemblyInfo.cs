@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MoneyMap")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fc6c3628201bc9afa99113e6ac50d9e3383501f3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+e45e1e6b4b1e2221925a4095df9f63e4f70b8404")]
 [assembly: System.Reflection.AssemblyProductAttribute("MoneyMap")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MoneyMap")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

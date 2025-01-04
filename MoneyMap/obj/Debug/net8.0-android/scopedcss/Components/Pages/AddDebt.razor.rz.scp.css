@@ -1,0 +1,90 @@
+.main-main-container[b-ur7ej9djf9] {
+    max-width: 100%;
+    margin-left: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container[b-ur7ej9djf9] {
+    width: 700px;
+    border: 1px solid #d1d3d4;
+    padding: 20px;
+}
+
+h1[b-ur7ej9djf9] {
+    font-size: 24px;
+    color: #2C3E50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form[b-ur7ej9djf9] {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label[b-ur7ej9djf9] {
+    font-size: 16px;
+    color: #2C3E50;
+}
+
+select[b-ur7ej9djf9],
+input[b-ur7ej9djf9],
+textarea[b-ur7ej9djf9] {
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #BDC3C7;
+    border-radius: 5px;
+    width: 100%;
+}
+
+textarea[b-ur7ej9djf9] {
+    resize: vertical;
+    min-height: 100px;
+}
+
+    input:focus[b-ur7ej9djf9],
+    select:focus[b-ur7ej9djf9],
+    textarea:focus[b-ur7ej9djf9] {
+        outline: none;
+        border-color: #03cc8c;
+    }
+
+.hidden[b-ur7ej9djf9] {
+    display: none;
+}
+
+.button-group[b-ur7ej9djf9] {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+button[b-ur7ej9djf9] {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-button[b-ur7ej9djf9] {
+    background-color: #16a085;
+    color: white;
+}
+
+    .save-button:hover[b-ur7ej9djf9] {
+        background-color: #16a085;
+    }
+
+.cancel-button[b-ur7ej9djf9] {
+    background-color: #e6e7e9;
+    color: #2C3E50;
+}
+
+    .cancel-button:hover[b-ur7ej9djf9] {
+        background-color: #d1d3d4;
+    }

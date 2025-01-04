@@ -24,27 +24,14 @@
                 <option value="" disabled selected>Select Transaction Type</option>
                 <option value="credit">Credit</option>
                 <option value="debit">Debit</option>
-                <option value="debt">Debt</option>
+              
             </select>
 
             <!-- Amount Text Field -->
             <label for="amount">Amount</label>
             <input type="number" id="amount" placeholder="Enter Amount" required @bind="transaction.Amount" />
 
-            <!-- Source of Debt Text Field (Visible only for Debt) -->
-            @if (transaction.Type == "debt")
-            {
-                <div id="debt-source-container">
-                    <label for="debt-source">Source of Debt</label>
-                    <input type="text" id="debt-source" placeholder="Enter Source of Debt" @bind="transaction.DebtSource" />
-                </div>
-
-                <!-- Due Date Date Picker (Visible only for Debt) -->
-                <div id="due-date-container">
-                    <label for="due-date">Due Date</label>
-                    <input type="date" id="due-date" @bind="transaction.DueDate" />
-                </div>
-            }
+           
 
             <!-- Tags Multiselect Dropdown -->
             <label for="tags">Tags</label>
@@ -82,7 +69,14 @@
             Debug.WriteLine($"Generated transaction ID: {transaction.Id}");
 
             // Define the path for the transaction data
-            var filePath = Path.Combine(AppContext.BaseDirectory, "Components", "Data", "transactions.json");
+            var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData");
+            if (!Directory.Exists(baseDirectory))
+            {
+                Directory.CreateDirectory(baseDirectory);
+                Debug.WriteLine($"Created directory: {baseDirectory}");
+            }
+
+            var filePath = Path.Combine(baseDirectory, "transactions.json");
             Debug.WriteLine($"Transaction file path: {filePath}");
 
             var transactions = new List<TransactionModel>();  // Change to TransactionModel
@@ -132,7 +126,7 @@
             Debug.WriteLine("Transactions saved to file.");
 
             // Redirect the user to the transactions page
-            Navigation.NavigateTo("/transaction");
+            Navigation.NavigateTo("/transactions");
         }
         catch (Exception ex)
         {
@@ -143,7 +137,7 @@
 
     private void Cancel()
     {
-        Navigation.NavigateTo("/transaction");
+        Navigation.NavigateTo("/transactions");
     }
 }
 }

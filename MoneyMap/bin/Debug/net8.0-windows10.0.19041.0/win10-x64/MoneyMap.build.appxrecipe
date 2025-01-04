@@ -229,12 +229,6 @@
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Data\debts.json">
-      <PackagePath>Components\Data\debts.json</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Data\transaction.json">
-      <PackagePath>Components\Data\transaction.json</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MoneyMap.deps.json">
       <PackagePath>MoneyMap.deps.json</PackagePath>
     </AppxPackagedFile>
@@ -519,6 +513,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Layout\NavMenu.razor.css">
       <PackagePath>Components\Layout\NavMenu.razor.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\AddDebt.razor.css">
+      <PackagePath>Components\Pages\AddDebt.razor.css</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Components\Pages\AddTransaction.razor.css">
       <PackagePath>Components\Pages\AddTransaction.razor.css</PackagePath>

@@ -73,9 +73,7 @@ table th,
     }
 
 .addTransactionButton {
-    position: absolute;
-    bottom: 20px;
-    right: 30px;
+  
     padding: 10px 20px;
     background-color: #16a085;
     color: white;

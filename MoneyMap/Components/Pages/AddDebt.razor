@@ -1,0 +1,127 @@
+﻿@page "/add-debts"
+@using MoneyMap.Components.Layout
+@using MoneyMap.Components.Models
+@layout MainLayout
+@using System.Text.Json
+@inject NavigationManager Navigation
+@using System.Diagnostics
+
+<div class="main-main-container">
+    <div class="main-container">
+        <h1 id="form-title">Add Debt</h1>
+        <form id="debtForm" @onsubmit="HandleSubmit">
+            <!-- Title Field -->
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="Enter Title" required @bind="debt.Title" />
+
+            <!-- Date Field -->
+            <label for="transaction-date">Date</label>
+            <input type="date" id="transaction-date" required @bind="debt.Date" />
+
+            <!-- Debt Source Field -->
+            <label for="debt-source">Source of Debt</label>
+            <input type="text" id="debt-source" placeholder="Enter Source of Debt" required @bind="debt.DebtSource" />
+
+            <!-- Amount Field -->
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" placeholder="Enter Amount" required @bind="debt.Amount" />
+
+            <!-- Due Date Date Picker -->
+            <label for="due-date">Due Date</label>
+            <input type="date" id="due-date" required @bind="debt.DueDate" />
+
+
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button type="submit" class="save-button">Save</button>
+                <button type="button" class="cancel-button" @onclick="Cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@code {
+    private DebtModel debt = new DebtModel { Date = DateTime.Now };
+
+    private async Task HandleSubmit()
+    {
+        try
+        {
+            // Generate a unique ID for the debt
+            debt.Id = Guid.NewGuid().ToString();
+            Debug.WriteLine($"Generated debt ID: {debt.Id}");
+
+            // Define the path for the debt data
+            var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
+            if (!Directory.Exists(baseDirectory))
+            {
+                Directory.CreateDirectory(baseDirectory);
+                Debug.WriteLine($"Created directory: {baseDirectory}");
+            }
+
+            var filePath = Path.Combine(baseDirectory, "debts.json");
+            Debug.WriteLine($"Debts file path: {filePath}");
+
+            var debts = new List<DebtModel>();  // Change to DebtModel
+
+            // Check if the file already exists and load its content
+            if (File.Exists(filePath))
+            {
+                Debug.WriteLine("File exists. Reading data...");
+                var json = await File.ReadAllTextAsync(filePath);
+
+                // Check if file is not empty
+                if (!string.IsNullOrWhiteSpace(json))
+                {
+                    try
+                    {
+                        debts = JsonSerializer.Deserialize<List<DebtModel>>(json) ?? new List<DebtModel>();  // Deserialize to TransactionModel
+                        Debug.WriteLine($"Loaded {debts.Count} debts.");
+                    }
+                    catch (JsonException jsonEx)
+                    {
+                        Debug.WriteLine($"Error parsing JSON: {jsonEx.Message}");
+                        Debug.WriteLine("Initializing debts as empty list.");
+                        debts = new List<DebtModel>();
+                    }
+                }
+                else
+                {
+                    Debug.WriteLine("File is empty. Initializing debts as empty list.");
+                }
+            }
+            else
+            {
+                Debug.WriteLine("File does not exist. Creating a new one.");
+            }
+
+            // Add the new debt to the list
+            debts.Add(debt);  // Add DebtModel to List<DebtModel>
+            Debug.WriteLine("Debt added to the list.");
+
+            // Serialize the debts list back to JSON
+            var updatedJson = JsonSerializer.Serialize(debts);
+            Debug.WriteLine("Debts serialized to JSON.");
+            Debug.WriteLine($"Serialized JSON: {updatedJson}");
+
+            // Save the updated list to the file
+            await File.WriteAllTextAsync(filePath, updatedJson);
+            Debug.WriteLine("Debts saved to file.");
+
+            // Redirect the user to the debts page
+            Navigation.NavigateTo("/debts");
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"An error occurred: {ex.Message}");
+            Debug.WriteLine($"Stack Trace: {ex.StackTrace}");
+        }
+    }
+
+    private void Cancel()
+    {
+        Navigation.NavigateTo("/debts");
+    }
+}
+}

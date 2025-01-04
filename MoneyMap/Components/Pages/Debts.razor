@@ -1,1 +1,22 @@
-﻿   
+﻿@page "/debts"
+@using MoneyMap.Components.Layout
+@layout MainLayout
+@inject NavigationManager Navigation
+
+<div class="main-main-container">
+    <div class="main-container">
+        <h1>Debts</h1>
+        
+        <button class="add-debt-button" @onclick="NavigateToAddDebt">Add Debt</button>
+
+        
+    </div>
+</div>
+
+@code {
+    private void NavigateToAddDebt()
+    {
+      
+        Navigation.NavigateTo("/add-debts");
+    }
+}
