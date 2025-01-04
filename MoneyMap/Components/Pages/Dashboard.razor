@@ -1,7 +1,10 @@
 ﻿@page "/dashboard"
+@using MoneyMap.Components.Models
 @using MoneyMap.Components.Layout
 @layout MainLayout
 @inject NavigationManager Navigation
+@using System.Text.Json
+@using Newtonsoft.Json
 
 <div class="main-container">
     <h3>Dashboard</h3>
@@ -9,23 +12,23 @@
     <section class="stats">
         <div class="stat-card">
             <h3>Total Inflows</h3>
-            <p id="total-inflows">$0</p>
+            <p id="total-inflows">Rs @totalInflows</p>
         </div>
         <div class="stat-card">
             <h3>Total Outflows</h3>
-            <p id="total-outflows">$0</p>
+            <p id="total-outflows">Rs @totalOutflows</p>
         </div>
         <div class="stat-card">
             <h3>Total Debts</h3>
-            <p id="total-debts">$0</p>
+            <p id="total-debts"> Rs @totalDebts</p>
         </div>
         <div class="stat-card">
             <h3>Cleared Debts</h3>
-            <p id="cleared-debts">$0</p>
+            <p id="cleared-debts">Rs @clearedDebts</p>
         </div>
         <div class="stat-card">
             <h3>Remaining Debts</h3>
-            <p id="remaining-debts">$0</p>
+            <p id="remaining-debts">Rs @remainingDebts</p>
         </div>
     </section>
     <section class="transactions">
@@ -41,12 +44,41 @@
                 </tr>
             </thead>
             <tbody id="transactions-list">
-                <!-- Dynamic rows will be inserted here -->
+                @foreach (var transaction in transactions.Take(5))
+                {
+                    <tr> 
+                        <td> @transaction.Title </td>
+                        <td> @transaction.Type </td>
+                        <td> @transaction.Amount </td>
+                        <td> @transaction.Date.ToShortDateString() </td>
+                        <td> @transaction.Tags </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </section>
 </div>
 
 @code {
+    private List<TransactionModel> transactions = new List<TransactionModel>();
+    private List<DebtModel> debts = new List<DebtModel>();
 
+    public decimal totalInflows => transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
+    public decimal totalOutflows => transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
+
+    public decimal totalDebts => debts.Sum(d => d.Amount);
+    public decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
+    public decimal remainingDebts => totalDebts-clearedDebts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var transactionFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData", "transactions.json");
+        var transactionJson = await File.ReadAllTextAsync(transactionFilePath);
+        transactions = string.IsNullOrWhiteSpace(transactionJson) ? new List<TransactionModel>() : JsonConvert.DeserializeObject<List<TransactionModel>>(transactionJson) ?? new List<TransactionModel>();
+
+        var debtFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData", "debts.json");
+        var debtJson = await File.ReadAllTextAsync(debtFilePath);
+        debts = string.IsNullOrWhiteSpace(debtJson) ? new List<DebtModel>() : JsonConvert.DeserializeObject<List<DebtModel>>(debtJson) ?? new List<DebtModel>();
+
+    }
 }
