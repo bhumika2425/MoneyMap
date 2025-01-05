@@ -1,12 +1,13 @@
-﻿.main-container[b-kgb0i96sf8] {
+.main-container[b-kgb0i96sf8] {
     margin-left: 230px;
+    padding: 20px;
 }
 
 .stats[b-kgb0i96sf8] {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* Centers the cards */
-    gap: 30px;
+    justify-content: space-between;
+    gap: 20px;
     margin-top: 20px;
 }
 
@@ -15,24 +16,91 @@
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    flex: 1;
     text-align: center;
     min-width: 150px;
-    height: 120px;
-    display: flex; /* Flexbox for centering */
-    align-items: center; /* Vertical centering */
-    justify-content: center; /* Horizontal centering */
-    flex-direction: column; /* Arrange text vertically */
+    height: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+    .stat-card:hover[b-kgb0i96sf8] {
+        transform: scale(1.05);
+    }
+
+    .stat-card h3[b-kgb0i96sf8] {
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #333;
+    }
+
+    .stat-card p[b-kgb0i96sf8] {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007B6D;
+    }
+
+.transactions[b-kgb0i96sf8] {
+    margin-top: 50px;
+}
+
+    .transactions h3[b-kgb0i96sf8] {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #007B6D;
+    }
+
+.transactions-container[b-kgb0i96sf8] {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.transactions-section[b-kgb0i96sf8] {
+    flex: 1;
+    min-width: 0; /* To handle flex shrinking properly */
+}
+
+
+
+table[b-kgb0i96sf8] {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+
+thead th[b-kgb0i96sf8] {
+    background-color: #dcf7f1;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+
+tbody tr[b-kgb0i96sf8] {
+    border-bottom: 1px solid #ddd;
+}
+
+    tbody tr:hover[b-kgb0i96sf8] {
+        background-color: #f1f1f1;
+    }
+
+td[b-kgb0i96sf8] {
+    padding: 10px;
+    text-align: left;
+}
+
+#transactions-list tr td[b-kgb0i96sf8] {
+    font-size: 14px;
+    color: #333;
 }
 
 @media (min-width: 600px) {
     .stat-card[b-kgb0i96sf8] {
-        flex: 0 0 calc(33.33% - 20px); /* 3 cards per row on wider screens */
+        flex: 0 0 calc(33.33% - 20px);
     }
 }
 
 @media (max-width: 599px) {
     .stat-card[b-kgb0i96sf8] {
-        flex: 1 0 100%; /* Stacks cards on smaller screens */
+        flex: 1 0 100%;
     }
 }

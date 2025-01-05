@@ -9,6 +9,12 @@
 <div class="main-main-container">
     <div class="main-container">
         <h1 id="form-title">Add Transaction</h1>
+        @if (!string.IsNullOrEmpty(InsufficientMessage))
+        {
+            <div class="alert alert-warning" role="alert">
+                @InsufficientMessage
+            </div>
+        }
         <form id="transactionForm" @onsubmit="HandleSubmit">
             <!-- Title Field -->
             <label for="title">Title</label>
@@ -33,15 +39,37 @@
 
            
 
-            <!-- Tags Multiselect Dropdown -->
-            <label for="tags">Tags</label>
-            <select id="tags" required @bind="transaction.Tags">
-                <option value="" disabled selected>Select tag</option>
-                <option value="rent">Rent</option>
-                <option value="salary">Salary</option>
-                <option value="food">Food</option>
-                <option value="shopping">Shopping</option>
-            </select>
+            
+                <!-- Default Tags  Dropdown -->
+
+            <button @onclick="ToggleTagButton">
+                @if (isCustomTag)
+                {
+                    <span>Use default tag</span>
+
+                }
+                else
+                {
+                    <span>Use default tag</span>
+                }
+            </button>
+
+            @if (isCustomTag)
+            {
+                <InputText @bind-Value="transaction.Tags" placeholder="enter custom tag"></InputText>
+            }
+            else
+            {
+                <select id="tags" required @bind="transaction.Tags">
+                    <option value="" disabled selected>Select tag</option>
+                    <option value="rent">Rent</option>
+                    <option value="salary">Salary</option>
+                    <option value="food">Food</option>
+                    <option value="shopping">Shopping</option>
+                </select>
+            }
+
+
 
             <!-- Notes Text Area -->
             <label for="notes">Notes (Optional)</label>
@@ -59,81 +87,70 @@
 
 @code {
     private TransactionModel transaction = new TransactionModel { Date = DateTime.Now };
+    private string InsufficientMessage = string.Empty;
+
+    private bool isCustomTag = false;
+
+    private void ToggleTagButton()
+    {
+        isCustomTag = !isCustomTag;
+    }
 
     private async Task HandleSubmit()
     {
         try
         {
-            // Generate a unique ID for the transaction
             transaction.Id = Guid.NewGuid().ToString();
-            Debug.WriteLine($"Generated transaction ID: {transaction.Id}");
 
-            // Define the path for the transaction data
             var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData");
             if (!Directory.Exists(baseDirectory))
             {
                 Directory.CreateDirectory(baseDirectory);
-                Debug.WriteLine($"Created directory: {baseDirectory}");
             }
 
             var filePath = Path.Combine(baseDirectory, "transactions.json");
-            Debug.WriteLine($"Transaction file path: {filePath}");
 
-            var transactions = new List<TransactionModel>();  // Change to TransactionModel
+            var transactions = new List<TransactionModel>();
 
-            // Check if the file already exists and load its content
             if (File.Exists(filePath))
             {
-                Debug.WriteLine("File exists. Reading data...");
                 var json = await File.ReadAllTextAsync(filePath);
 
-                // Check if file is not empty
                 if (!string.IsNullOrWhiteSpace(json))
                 {
                     try
                     {
-                        transactions = JsonSerializer.Deserialize<List<TransactionModel>>(json) ?? new List<TransactionModel>();  // Deserialize to TransactionModel
-                        Debug.WriteLine($"Loaded {transactions.Count} transactions.");
+                        transactions = JsonSerializer.Deserialize<List<TransactionModel>>(json) ?? new List<TransactionModel>();
                     }
-                    catch (JsonException jsonEx)
+                    catch (JsonException)
                     {
-                        Debug.WriteLine($"Error parsing JSON: {jsonEx.Message}");
-                        Debug.WriteLine("Initializing transactions as empty list.");
                         transactions = new List<TransactionModel>();
                     }
                 }
-                else
-                {
-                    Debug.WriteLine("File is empty. Initializing transactions as empty list.");
-                }
             }
-            else
+
+            var totalIncome = transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
+            var totalExpenses = transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
+            var totalBalance = totalIncome - totalExpenses;
+
+            if (transaction.Type == "debit" && transaction.Amount > totalBalance)
             {
-                Debug.WriteLine("File does not exist. Creating a new one.");
+                InsufficientMessage = "Insufficient balance for this expense.";
+                return;
             }
 
-            // Add the new transaction to the list
-            transactions.Add(transaction);  // Add TransactionModel to List<TransactionModel>
-            Debug.WriteLine("Transaction added to the list.");
-
-            // Serialize the transactions list back to JSON
+            transactions.Add(transaction);
             var updatedJson = JsonSerializer.Serialize(transactions);
-            Debug.WriteLine("Transactions serialized to JSON.");
-            Debug.WriteLine($"Serialized JSON: {updatedJson}");
-
-            // Save the updated list to the file
             await File.WriteAllTextAsync(filePath, updatedJson);
-            Debug.WriteLine("Transactions saved to file.");
 
-            // Redirect the user to the transactions page
             Navigation.NavigateTo("/transactions");
         }
         catch (Exception ex)
         {
             Debug.WriteLine($"An error occurred: {ex.Message}");
-            Debug.WriteLine($"Stack Trace: {ex.StackTrace}");
         }
     }
+
 
     private void Cancel()
     {

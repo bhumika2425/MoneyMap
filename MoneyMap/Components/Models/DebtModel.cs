@@ -12,7 +12,7 @@ namespace MoneyMap.Components.Models
         public string Title { get; set; }
         public string DebtSource { get; set; }
         public string Status { get; set; }
-        public decimal Amount { get; set; }
+        public int Amount { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
         public DateTime DueDate { get; set; }
         public bool IsCleared { get; set; }

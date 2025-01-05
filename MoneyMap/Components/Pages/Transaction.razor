@@ -21,6 +21,11 @@
         </div>
     </div>
 
+    <div class="totals">
+        <p>Total number of transactions: @totalNumberOfTransactions</p>
+        <p>Total balance: Rs @totalBalance</p>
+    </div>
+
     <div class="transaction-list">
         <div class="transaction-header">
             <input type="text" id="search" placeholder="Search by title..." @bind="searchTerm" @oninput="SearchTransactions">
@@ -30,6 +35,7 @@
                 <option value="Credit">Credit</option>
                 
             </select>
+            <input type="text" id="tags" placeholder="Filter by tags..." @bind="tagsFilter" />
             <button @onclick="SortTransactions">Sort by Date</button>
         </div>
         <table id="transaction-table">
@@ -76,6 +82,16 @@
     private DateTime? startDate = null;
     private DateTime? endDate = null;
     private string selectedTransactionType = string.Empty;
+    private string tagsFilter = string.Empty;
+
+    private int totalNumberOfTransactions => transactions.Count;
+
+    // Calculate total income and total expenses separately
+    private decimal totalIncome => transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
+    private decimal totalExpenses => transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
+
+    // Calculate balance as total income minus total expenses
+    private decimal totalBalance => totalIncome - totalExpenses;
 
     protected override async Task OnInitializedAsync()
     {
@@ -117,6 +133,14 @@
         {
             filteredTransactions = filteredTransactions
                 .Where(t => t.Type.Equals(selectedTransactionType, StringComparison.OrdinalIgnoreCase))
+                .ToList();
+        }
+
+        // Apply tags filter
+        if (!string.IsNullOrEmpty(tagsFilter))
+        {
+            filteredTransactions = filteredTransactions
+                .Where(t => t.Tags != null && t.Tags.Contains(tagsFilter, StringComparison.OrdinalIgnoreCase))
                 .ToList();
         }
 

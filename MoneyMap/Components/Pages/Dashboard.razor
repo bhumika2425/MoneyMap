@@ -30,33 +30,85 @@
             <h3>Remaining Debts</h3>
             <p id="remaining-debts">Rs @remainingDebts</p>
         </div>
+        <div class="stat-card">
+            <h3>Highest Inflow</h3>
+            <p id="highest-transaction">Rs @highestInflow</p>
+        </div>
+        <div class="stat-card lowest-transaction">
+            <h3>Lowest Ìnflow</h3>
+            <p id="lowest-transaction">Rs @lowestInflow</p>
+        </div>
+        <div class="stat-card">
+            <h3>Highest Outflow</h3>
+            <p id="highest-transaction">Rs @highestOutflow</p>
+        </div>
+        <div class="stat-card lowest-transaction">
+            <h3>Lowest Outflow</h3>
+            <p id="lowest-transaction">Rs @lowestOutflow</p>
+        </div>
+        <div class="stat-card">
+            <h3>Highest Debt</h3>
+            <p id="highest-transaction">Rs @highestDebt</p>
+        </div>
+        <div class="stat-card lowest-transaction">
+            <h3>Lowest Debt</h3>
+            <p id="lowest-transaction">Rs @lowestDebt</p>
+        </div>
     </section>
-    <section class="transactions">
-        <h3 style="margin-top: 50px;">Latest Transactions (5)</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Type</th>
-                    <th>Amount</th>
-                    <th>Date</th>
-                    <th>Tags</th>
-                </tr>
-            </thead>
-            <tbody id="transactions-list">
-                @foreach (var transaction in transactions.Take(5))
-                {
-                    <tr> 
-                        <td> @transaction.Title </td>
-                        <td> @transaction.Type </td>
-                        <td> @transaction.Amount </td>
-                        <td> @transaction.Date.ToShortDateString() </td>
-                        <td> @transaction.Tags </td>
+    <div class="transactions-container">
+        <section class="transactions-section">
+            <h3 style="margin-top: 50px;">Latest Transactions (5)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                        <th>Tags</th>
                     </tr>
-                }
-            </tbody>
-        </table>
-    </section>
+                </thead>
+                <tbody id="transactions-list">
+                    @foreach (var transaction in transactions.Take(5))
+                    {
+                        <tr>
+                            <td>@transaction.Title</td>
+                            <td>@transaction.Type</td>
+                            <td>@transaction.Amount</td>
+                            <td>@transaction.Date.ToShortDateString()</td>
+                            <td>@transaction.Tags</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+        <section class="transactions-section">
+            <h3 style="margin-top: 50px;">Pending Debts (5)</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>DebtSource</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="transactions-list">
+                    @foreach (var debt in debts.Where(d => d.Status == "Pending").Take(5))
+                    {
+                        <tr>
+                            <td>@debt.Title</td>
+                            <td>@debt.DebtSource</td>
+                            <td>@debt.Amount</td>
+                            <td>@debt.Date.ToShortDateString()</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+
 </div>
 
 @code {
@@ -69,6 +121,31 @@
     public decimal totalDebts => debts.Sum(d => d.Amount);
     public decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
     public decimal remainingDebts => totalDebts-clearedDebts;
+
+    private decimal highestInflow => transactions.Where(t => t.Type == "credit").Any()
+        ? transactions.Where(t => t.Type == "credit").Max(t => t.Amount)
+        : 0;
+
+    private decimal lowestInflow => transactions.Where(t => t.Type == "credit").Any()
+        ? transactions.Where(t => t.Type == "credit").Min(t => t.Amount)
+        : 0;
+
+    private decimal highestOutflow => transactions.Where(t => t.Type == "debit").Any()
+        ? transactions.Where(t => t.Type == "debit").Max(t => t.Amount)
+        : 0;
+
+    private decimal lowestOutflow => transactions.Where(t => t.Type == "debit").Any()
+        ? transactions.Where(t => t.Type == "debit").Min(t => t.Amount)
+        : 0;
+
+    private decimal highestDebt => debts.Any()
+        ? debts.Max(d => d.Amount)
+        : 0;
+
+    private decimal lowestDebt => debts.Any()
+        ? debts.Min(d => d.Amount)
+        : 0;
+
 
     protected override async Task OnInitializedAsync()
     {
