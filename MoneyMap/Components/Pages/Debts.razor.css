@@ -1,4 +1,4 @@
-﻿body {
+﻿﻿body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@
 
 p {
     font-size: 36px;
-    color: #2c3e50;
+    color: #333;
 }
 
 .heading {
@@ -40,7 +40,7 @@ p {
 
 .summary {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 20px;
     margin-bottom: 40px;
 }
@@ -54,22 +54,24 @@ p {
         color: white;
         flex: 1;
         transition: transform 0.3s;
+        max-width: 350px;
     }
 
         .summary .card:hover {
             transform: scale(1.05);
         }
 
-        .summary .card h2 {
-            font-size: 2.5rem;
+        .summary .card h3 {
+            font-size: 1.5rem;
             margin: 0;
-            color: #16a085;
+            color: #007B6D;
+            font-weight: bold;
         }
 
         .summary .card p {
             font-size: 1.1rem;
             margin: 10px 0 0;
-            color: dimgrey;
+            
         }
 
 .summary-description {
@@ -101,8 +103,8 @@ th, td {
 }
 
 th {
-    background-color: #16a085;
-    color: white;
+    background-color: #dcf7f1;
+    color: black;
     font-size: 1.2rem;
 }
 

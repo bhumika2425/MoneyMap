@@ -12,6 +12,8 @@
     padding-top: 60px; /* Space for the top navbar */
 }
 
+
+
     .side-nav .nav-link[b-ubleqgpcxs] {
         color: #ffffff;
         text-decoration: none;
@@ -51,6 +53,34 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+
+.nav-button[b-ubleqgpcxs] {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+    .nav-button:hover[b-ubleqgpcxs] {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    .nav-button:focus[b-ubleqgpcxs] {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+
+    .nav-button span[b-ubleqgpcxs] {
+        margin-right: 10px;
+    }
 /* /Components/Pages/AddDebt.razor.rz.scp.css */
 .main-main-container[b-ur7ej9djf9] {
     max-width: 100%;
@@ -245,25 +275,37 @@ button[b-kf21b7leon] {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 10px;
+    margin-top: 10px;
 }
 
 .stat-card[b-kgb0i96sf8] {
     background-color: #dcf7f1;
-    padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
     text-align: center;
-    min-width: 150px;
-    height: 100px;
+    display: inline-block; /* Allow the card to fit the content */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
+    max-width: 200px;
 }
+
+    .stat-card h3[b-kgb0i96sf8] {
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .stat-card p[b-kgb0i96sf8] {
+        font-size: 18px;
+        font-weight: bold;
+        color: #007B6D;
+    }
 
     .stat-card:hover[b-kgb0i96sf8] {
         transform: scale(1.05);
     }
+
 
     .stat-card h3[b-kgb0i96sf8] {
         margin-bottom: 10px;
@@ -353,7 +395,7 @@ body[b-yfrfkzsodw] {
 
 p[b-yfrfkzsodw] {
     font-size: 36px;
-    color: #2c3e50;
+    color: #333;
 }
 
 .heading[b-yfrfkzsodw] {
@@ -385,7 +427,7 @@ p[b-yfrfkzsodw] {
 
 .summary[b-yfrfkzsodw] {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 20px;
     margin-bottom: 40px;
 }
@@ -399,22 +441,24 @@ p[b-yfrfkzsodw] {
         color: white;
         flex: 1;
         transition: transform 0.3s;
+        max-width: 350px;
     }
 
         .summary .card:hover[b-yfrfkzsodw] {
             transform: scale(1.05);
         }
 
-        .summary .card h2[b-yfrfkzsodw] {
-            font-size: 2.5rem;
+        .summary .card h3[b-yfrfkzsodw] {
+            font-size: 1.5rem;
             margin: 0;
-            color: #16a085;
+            color: #007B6D;
+            font-weight: bold;
         }
 
         .summary .card p[b-yfrfkzsodw] {
             font-size: 1.1rem;
             margin: 10px 0 0;
-            color: dimgrey;
+            
         }
 
 .summary-description[b-yfrfkzsodw] {
@@ -446,8 +490,8 @@ th[b-yfrfkzsodw], td[b-yfrfkzsodw] {
 }
 
 th[b-yfrfkzsodw] {
-    background-color: #16a085;
-    color: white;
+    background-color: #dcf7f1;
+    color: black;
     font-size: 1.2rem;
 }
 

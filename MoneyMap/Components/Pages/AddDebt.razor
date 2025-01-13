@@ -10,29 +10,23 @@
     <div class="main-container">
         <h1 id="form-title">Add Debt</h1>
         <form id="debtForm" @onsubmit="HandleSubmit">
-            <!-- Title Field -->
+            
             <label for="title">Title</label>
             <input type="text" id="title" placeholder="Enter Title" required @bind="debt.Title" />
 
-            <!-- Date Field -->
             <label for="transaction-date">Date</label>
             <input type="date" id="transaction-date" required @bind="debt.Date" />
 
-            <!-- Debt Source Field -->
             <label for="debt-source">Source of Debt</label>
             <input type="text" id="debt-source" placeholder="Enter Source of Debt" required @bind="debt.DebtSource" />
 
-            <!-- Amount Field -->
             <label for="amount">Amount</label>
             <input type="number" id="amount" placeholder="Enter Amount" required @bind="debt.Amount" />
 
-            <!-- Due Date Date Picker -->
             <label for="due-date">Due Date</label>
             <input type="date" id="due-date" required @bind="debt.DueDate" />
 
 
-
-            <!-- Buttons -->
             <div class="button-group">
                 <button type="submit" class="save-button">Save</button>
                 <button type="button" class="cancel-button" @onclick="Cancel">Cancel</button>
@@ -125,3 +119,5 @@
     }
 }
 }
+
+

@@ -1,4 +1,5 @@
-﻿﻿
+﻿@inject NavigationManager NavigationManager
+
 <input type="checkbox" title="Navigation menu" id="nav-toggle" class="navbar-toggler" />
 
 <div class="nav-scrollable">
@@ -10,29 +11,52 @@
 
     <nav class="side-nav flex-column">
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/dashboard" Match="NavLinkMatch.All">
+            <button class="nav-button" @onclick="navButtonNavigateToDashboard">
                 <span class="bi bi-house-door-fill" aria-hidden="true"></span> Dashboard
-            </NavLink>
+            </button>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/transactions">
+            <button class="nav-button" @onclick="navButtonNavigateToTransaction">
                 <span class="bi bi-cash-stack" aria-hidden="true"></span> Transaction
-            </NavLink>
+            </button>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/debts">
+            <button class="nav-button" @onclick="navButtonNavigateToDebt">
                 <span class="bi bi-wallet2" aria-hidden="true"></span> Debts
-            </NavLink>
+            </button>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="reports">
+            <button class="nav-button" @onclick="navButtonNavigateToReport">
                 <span class="bi bi-graph-up" aria-hidden="true"></span> Reports
-            </NavLink>
+            </button>
         </div>
         <div class="nav-item px-3">
-            <NavLink class="nav-link" href="settings">
+            <button class="nav-button" @onclick="navButtonNavigateToSetting">
                 <span class="bi bi-gear" aria-hidden="true"></span> Settings
-            </NavLink>
+            </button>
         </div>
     </nav>
 </div>
+
+@code {
+    private void navButtonNavigateToDashboard()
+    {
+        NavigationManager.NavigateTo("/dashboard");
+    }
+    private void navButtonNavigateToTransaction()
+    {
+        NavigationManager.NavigateTo("/transactions");
+    }
+    private void navButtonNavigateToDebt()
+    {
+        NavigationManager.NavigateTo("/debts");
+    }
+    private void navButtonNavigateToReport()
+    {
+        NavigationManager.NavigateTo("/reports");
+    }
+    private void navButtonNavigateToSetting()
+    {
+        NavigationManager.NavigateTo("/settinga");
+    }
+}

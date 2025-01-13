@@ -16,15 +16,13 @@
             </div>
         }
         <form id="transactionForm" @onsubmit="HandleSubmit">
-            <!-- Title Field -->
+           
             <label for="title">Title</label>
             <input type="text" id="title" placeholder="Enter Title" required @bind="transaction.Title" />
 
-            <!-- Date Field -->
             <label for="transaction-date">Date</label>
             <input type="date" id="transaction-date" required @bind="transaction.Date" />
 
-            <!-- Transaction Type Dropdown -->
             <label for="transaction-type">Transaction Type</label>
             <select id="transaction-type" required @bind="transaction.Type">
                 <option value="" disabled selected>Select Transaction Type</option>
@@ -33,14 +31,14 @@
               
             </select>
 
-            <!-- Amount Text Field -->
+          
             <label for="amount">Amount</label>
             <input type="number" id="amount" placeholder="Enter Amount" required @bind="transaction.Amount" />
 
            
 
             
-                <!-- Default Tags  Dropdown -->
+                @* Default Tags  Dropdown  *@
 
             <button @onclick="ToggleTagButton">
                 @if (isCustomTag)
@@ -50,7 +48,7 @@
                 }
                 else
                 {
-                    <span>Use default tag</span>
+                    <span>Use custom tag</span>
                 }
             </button>
 
@@ -71,11 +69,10 @@
 
 
 
-            <!-- Notes Text Area -->
+            @* Notes text ares *@
             <label for="notes">Notes (Optional)</label>
             <textarea id="notes" placeholder="Enter any notes" @bind="transaction.Notes"></textarea>
 
-            <!-- Buttons -->
             <div class="button-group">
                 <button type="submit" class="save-button">Save</button>
                 <button type="button" class="cancel-button" @onclick="Cancel">Cancel</button>

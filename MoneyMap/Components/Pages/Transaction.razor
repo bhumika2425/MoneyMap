@@ -84,7 +84,8 @@
     private string selectedTransactionType = string.Empty;
     private string tagsFilter = string.Empty;
 
-    private int totalNumberOfTransactions => transactions.Count;
+    private int totalNumberOfTransactions => filteredTransactions.Count;
+
 
     // Calculate total income and total expenses separately
     private decimal totalIncome => transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
@@ -115,7 +116,7 @@
             if (!string.IsNullOrWhiteSpace(json))
             {
                 transactions = JsonSerializer.Deserialize<List<TransactionModel>>(json) ?? new List<TransactionModel>();
-                filteredTransactions = new List<TransactionModel>(transactions);  // Initially display all transactions
+                filteredTransactions = new List<TransactionModel>(transactions);  // display all transactions but filters can be applied later
             }
         }
     }
@@ -146,6 +147,9 @@
 
         // Apply search filter after date filtering
         SearchTransactions();
+
+        // Debug statement to check the number of filtered transactions
+        Debug.WriteLine($"Filtered transactions after applying filters: {filteredTransactions.Count}");
     }
 
     private void SearchTransactions()
@@ -167,7 +171,7 @@
 
     private void EditTransaction(string transactionId)
     {
-        // Implement editing logic here
+        // Implementing editing in future 
     }
 
     private void DeleteTransaction(string transactionId)
@@ -179,7 +183,7 @@
 
     private async void SaveTransactions()
     {
-        var filePath = Path.Combine(AppContext.BaseDirectory, "Components", "Data", "transactions.json");
+        var filePath = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData", "transactions.json");
         var updatedJson = JsonSerializer.Serialize(transactions);
         await File.WriteAllTextAsync(filePath, updatedJson);
     }
