@@ -11,6 +11,8 @@
     padding-top: 60px; /* Space for the top navbar */
 }
 
+
+
     .side-nav .nav-link[b-ubleqgpcxs] {
         color: #ffffff;
         text-decoration: none;
@@ -50,3 +52,31 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+
+.nav-button[b-ubleqgpcxs] {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+    .nav-button:hover[b-ubleqgpcxs] {
+        background-color: #007B6D;
+        transform: scale(1.05);
+    }
+
+    .nav-button:focus[b-ubleqgpcxs] {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    }
+
+    .nav-button span[b-ubleqgpcxs] {
+        margin-right: 10px;
+    }

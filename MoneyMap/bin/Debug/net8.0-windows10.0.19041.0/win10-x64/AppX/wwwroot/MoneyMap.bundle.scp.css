@@ -69,7 +69,7 @@
 }
 
     .nav-button:hover[b-ubleqgpcxs] {
-        background-color: #0056b3;
+        background-color: #007B6D;
         transform: scale(1.05);
     }
 
@@ -285,7 +285,7 @@ button[b-kf21b7leon] {
     border-radius: 8px;
     text-align: center;
     display: inline-block; /* Allow the card to fit the content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
     transition: transform 0.2s;
     max-width: 200px;
 }
@@ -576,7 +576,7 @@ body[b-v1ptjgar5f] {
 }
 
     .hero-btn:hover[b-v1ptjgar5f] {
-        background-color: darkgreen;
+        background-color: #007B6D;
     }
 
 /* /Components/Pages/Login.razor.rz.scp.css */
@@ -638,11 +638,11 @@ button[b-otxoo4jwx2] {
 }
 
     button:hover[b-otxoo4jwx2] {
-        background-color: #16a085;
+        background-color: #007B6D;
     }
 
     button:active[b-otxoo4jwx2] {
-        background-color: darkgreen;
+        background-color: #007B6D;
     }
 
 /* /Components/Pages/Transaction.razor.rz.scp.css */
