@@ -6,10 +6,11 @@
 @inject NavigationManager Navigation
 @using System.Diagnostics
 @using Newtonsoft.Json
+@inject IJSRuntime JSRuntime
 
 <body>
     <div class="heading">
-        <h3>Debt Management</h3>
+        <h3 class="h3heading">Debt Management</h3>
         <button class="add-debt-btn" @onclick="NavigateToAddDebtForm">Add Debt</button>
     </div>
     <!-- Summary Section -->
@@ -31,7 +32,7 @@
         </div>
     </div>
     <!-- Debt Table Section -->
-    <h2>Your Debts</h2>
+    <h3>Your Debts</h3>
     <div class="table-container">
         <table class="table">
             <thead>
@@ -65,7 +66,7 @@
                             <td>
                                 @if (debt.Status == "Pending")
                                 {
-                                    <button class="action-btn" @onclick="() => ClearDebt(debt)">Clear</button>
+                                    <button class="action-btn" @onclick="() => ClearDebtAsync(debt)">Clear</button>
                                 }
                             </td>
                         </tr>
@@ -82,7 +83,13 @@
     </div>
 </body>
 @code {
+    private List<TransactionModel> transactions = new List<TransactionModel>();
     private List<DebtModel> debts = new List<DebtModel>();
+
+    public decimal totalInflows => transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
+    public decimal totalOutflows => transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
+
+    public decimal totalBalance => totalInflows + pendingDebts - totalOutflows;
 
     private decimal totalDebts => debts.Where(d => d.Status != "Cleared").Sum(d => d.Amount);
     private decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
@@ -92,6 +99,11 @@
     {
         try
         {
+            var transactionFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData", "transactions.json");
+            var transactionJson = await File.ReadAllTextAsync(transactionFilePath);
+            transactions = string.IsNullOrWhiteSpace(transactionJson) ? new List<TransactionModel>() : JsonConvert.DeserializeObject<List<TransactionModel>>(transactionJson) ?? new List<TransactionModel>();
+
+
             var baseDirectory = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData");
             var filePath = Path.Combine(baseDirectory, "debts.json");
 
@@ -118,14 +130,29 @@
         Navigation.NavigateTo("/add-debts");
     }
 
-    private void ClearDebt(DebtModel debt)
+    private async Task ClearDebtAsync(DebtModel debt)
     {
-        debt.Status = "Cleared";  // Update the debt status to "Cleared"
-        SaveDebtsToFile();
-        StateHasChanged();  // Trigger re-rendering to update the table
+        if (debt == null) return;
+
+        if (totalBalance >= debt.Amount)
+        {
+            debt.Status = "Cleared";  // Update the debt status to "Cleared"
+            await SaveDebtsToFileAsync();  // Save the updated debts list to the file
+            StateHasChanged();  // Trigger re-rendering to update the UI
+
+            // Show success message
+            await JSRuntime.InvokeVoidAsync("alert", "Debt cleared successfully.");
+        }
+        else
+        {
+            // Show alert message for insufficient balance
+            await JSRuntime.InvokeVoidAsync("alert", "Not enough balance to clear the debt.");
+        }
     }
 
-    private async void SaveDebtsToFile()
+
+
+    private async Task SaveDebtsToFileAsync()
     {
         try
         {
@@ -142,4 +169,5 @@
             Debug.WriteLine($"Error saving debts: {ex.Message}");
         }
     }
+
 }

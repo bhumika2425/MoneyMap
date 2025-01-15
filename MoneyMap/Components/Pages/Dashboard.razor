@@ -6,9 +6,14 @@
     @using Newtonsoft.Json
 
     <div class="main-container">
-        <h3>Dashboard</h3>
+        <h3 class="heading">Dashboard</h3>
 
-        <section class="stats">
+        <section>
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Total Balance</h3>
+                <p id="total-balance">Rs @totalBalance</p>
+            </div>
             <div class="stat-card">
                 <h3>Total Inflows</h3>
                 <p id="total-inflows">Rs @totalInflows</p>
@@ -25,33 +30,38 @@
                 <h3>Cleared Debts</h3>
                 <p id="cleared-debts">Rs @clearedDebts</p>
             </div>
-            <div class="stat-card">
+            </div>
+            <div class="row1">
+            <div class="r1-stat-card">
                 <h3>Remaining Debts</h3>
                 <p id="remaining-debts">Rs @remainingDebts</p>
             </div>
-            <div class="stat-card">
+            <div class="r1-stat-card">
                 <h3>Highest Inflow</h3>
                 <p id="highest-transaction">Rs @highestInflow</p>
             </div>
-            <div class="stat-card lowest-transaction">
-                <h3>Lowest Ìnflow</h3>
+            <div class="r1-stat-card lowest-transaction">
+                <h3>Lowest Inflow</h3>
                 <p id="lowest-transaction">Rs @lowestInflow</p>
             </div>
-            <div class="stat-card">
+            <div class="r1-stat-card">
                 <h3>Highest Outflow</h3>
                 <p id="highest-transaction">Rs @highestOutflow</p>
             </div>
-            <div class="stat-card lowest-transaction">
-                <h3>Lowest Outflow</h3>
-                <p id="lowest-transaction">Rs @lowestOutflow</p>
             </div>
-            <div class="stat-card">
+            <div class="row2">
+            <div class="ld-stat-card">
                 <h3>Highest Debt</h3>
                 <p id="highest-transaction">Rs @highestDebt</p>
             </div>
-            <div class="stat-card lowest-transaction">
+            <div class="ld-stat-card">
                 <h3>Lowest Debt</h3>
                 <p id="lowest-transaction">Rs @lowestDebt</p>
+            </div>
+            <div class="ld-stat-card">
+                <h3>Lowest Outflow</h3>
+                <p id="lowest-transaction">Rs @lowestOutflow</p>
+            </div>
             </div>
         </section>
         <div class="transactions-container">
@@ -116,10 +126,13 @@
 
         public decimal totalInflows => transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
         public decimal totalOutflows => transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
+        
 
         public decimal totalDebts => debts.Sum(d => d.Amount);
         public decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
         public decimal remainingDebts => totalDebts-clearedDebts;
+
+    public decimal totalBalance => totalInflows + remainingDebts - totalOutflows;
 
         private decimal highestInflow => transactions.Where(t => t.Type == "credit").Any()
             ? transactions.Where(t => t.Type == "credit").Max(t => t.Amount)

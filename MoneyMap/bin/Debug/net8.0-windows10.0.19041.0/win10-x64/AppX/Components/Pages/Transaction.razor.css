@@ -2,6 +2,10 @@
     margin-left: 230px;
 }
 
+h3 {
+    font-weight: bold;
+}
+
 .content {
     display: flex;
     align-items: center; /* Align items vertically in the center */

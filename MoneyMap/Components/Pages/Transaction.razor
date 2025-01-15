@@ -23,7 +23,6 @@
 
     <div class="totals">
         <p>Total number of transactions: @totalNumberOfTransactions</p>
-        <p>Total balance: Rs @totalBalance</p>
     </div>
 
     <div class="transaction-list">
@@ -88,11 +87,11 @@
 
 
     // Calculate total income and total expenses separately
-    private decimal totalIncome => transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
-    private decimal totalExpenses => transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
+    // private decimal totalIncome => transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
+    // private decimal totalExpenses => transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
 
     // Calculate balance as total income minus total expenses
-    private decimal totalBalance => totalIncome - totalExpenses;
+    // private decimal totalBalance => totalIncome - totalExpenses;
 
     protected override async Task OnInitializedAsync()
     {

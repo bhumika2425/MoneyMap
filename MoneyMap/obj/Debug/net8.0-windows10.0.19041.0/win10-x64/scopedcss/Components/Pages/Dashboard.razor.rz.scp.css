@@ -1,6 +1,11 @@
 .main-container[b-kgb0i96sf8] {
+
     margin-left: 230px;
     padding: 20px;
+}
+
+.heading[b-kgb0i96sf8] {
+    font-weight: bold;
 }
 
 .stats[b-kgb0i96sf8] {
@@ -8,7 +13,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .stat-card[b-kgb0i96sf8] {
@@ -115,4 +120,106 @@ td[b-kgb0i96sf8] {
     .stat-card[b-kgb0i96sf8] {
         flex: 1 0 100%;
     }
+}
+
+
+
+.ld-stat-card[b-kgb0i96sf8] {
+    background-color: #dcf7f1;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 200px;
+    height: 85px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+    .ld-stat-card h3[b-kgb0i96sf8] {
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .ld-stat-card p[b-kgb0i96sf8] {
+        font-size: 18px;
+        font-weight: bold;
+        color: #007B6D;
+    }
+
+    .ld-stat-card:hover[b-kgb0i96sf8] {
+        transform: scale(1.05);
+    }
+
+.ld-stat-card h3[b-kgb0i96sf8] {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.ld-stat-card p[b-kgb0i96sf8] {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007B6D;
+}
+
+
+
+    .row2[b-kgb0i96sf8] {
+        margin: 20px;   
+        display: flex;
+        justify-content: center;
+    }
+
+.r1-stat-card[b-kgb0i96sf8] {
+    background-color: #dcf7f1;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    width: 200px;
+    height: 85px;
+    margin-right: 25px;
+    margin-left: 25px;
+}
+
+    .r1-stat-card h3[b-kgb0i96sf8] {
+        margin-bottom: 5px;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .r1-stat-card p[b-kgb0i96sf8] {
+        font-size: 18px;
+        font-weight: bold;
+        color: #007B6D;
+    }
+
+    .r1-stat-card:hover[b-kgb0i96sf8] {
+        transform: scale(1.05);
+    }
+
+    .r1-stat-card h3[b-kgb0i96sf8] {
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #333;
+    }
+
+    .r1-stat-card p[b-kgb0i96sf8] {
+        font-size: 24px;
+        font-weight: bold;
+        color: #007B6D;
+    }
+
+
+
+.row1[b-kgb0i96sf8] {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
 }

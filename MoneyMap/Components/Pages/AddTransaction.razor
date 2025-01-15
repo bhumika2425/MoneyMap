@@ -5,6 +5,7 @@
 @using System.Text.Json
 @inject NavigationManager Navigation
 @using System.Diagnostics
+@using Newtonsoft.Json
 
 <div class="main-main-container">
     <div class="main-container">
@@ -93,6 +94,30 @@
         isCustomTag = !isCustomTag;
     }
 
+    private List<TransactionModel> transactions = new List<TransactionModel>();
+    private List<DebtModel> debts = new List<DebtModel>();
+
+    public decimal totalInflows => transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
+    public decimal totalOutflows => transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
+
+
+    public decimal totalDebts => debts.Sum(d => d.Amount);
+    public decimal clearedDebts => debts.Where(d => d.Status == "Cleared").Sum(d => d.Amount);
+    public decimal remainingDebts => totalDebts - clearedDebts;
+
+    public decimal totalBalance => totalInflows + remainingDebts - totalOutflows;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var transactionFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "TransactionsData", "transactions.json");
+        var transactionJson = await File.ReadAllTextAsync(transactionFilePath);
+        transactions = string.IsNullOrWhiteSpace(transactionJson) ? new List<TransactionModel>() : JsonConvert.DeserializeObject<List<TransactionModel>>(transactionJson) ?? new List<TransactionModel>();
+
+        var debtFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData", "debts.json");
+        var debtJson = await File.ReadAllTextAsync(debtFilePath);
+        debts = string.IsNullOrWhiteSpace(debtJson) ? new List<DebtModel>() : JsonConvert.DeserializeObject<List<DebtModel>>(debtJson) ?? new List<DebtModel>();
+    }
+
     private async Task HandleSubmit()
     {
         try
@@ -117,18 +142,18 @@
                 {
                     try
                     {
-                        transactions = JsonSerializer.Deserialize<List<TransactionModel>>(json) ?? new List<TransactionModel>();
+                        transactions = System.Text.Json.JsonSerializer.Deserialize<List<TransactionModel>>(json) ?? new List<TransactionModel>();
                     }
-                    catch (JsonException)
+                    catch (System.Text.Json.JsonException)
                     {
                         transactions = new List<TransactionModel>();
                     }
                 }
             }
 
-            var totalIncome = transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
-            var totalExpenses = transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
-            var totalBalance = totalIncome - totalExpenses;
+            // var totalIncome = transactions.Where(t => t.Type == "credit").Sum(t => t.Amount);
+            // var totalExpenses = transactions.Where(t => t.Type == "debit").Sum(t => t.Amount);
+            // var totalBalance = totalIncome - totalExpenses ;
 
             if (transaction.Type == "debit" && transaction.Amount > totalBalance)
             {
@@ -137,7 +162,7 @@
             }
 
             transactions.Add(transaction);
-            var updatedJson = JsonSerializer.Serialize(transactions);
+            var updatedJson = System.Text.Json.JsonSerializer.Serialize(transactions);
             await File.WriteAllTextAsync(filePath, updatedJson);
 
             Navigation.NavigateTo("/transactions");
