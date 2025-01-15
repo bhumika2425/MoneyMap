@@ -115,7 +115,8 @@
             if (!string.IsNullOrWhiteSpace(json))
             {
                 transactions = JsonSerializer.Deserialize<List<TransactionModel>>(json) ?? new List<TransactionModel>();
-                filteredTransactions = new List<TransactionModel>(transactions);  // display all transactions but filters can be applied later
+                // filteredTransactions = new List<TransactionModel>(transactions);  display all transactions but filters can be applied later
+                filteredTransactions = transactions.OrderByDescending(t => t.Date).ToList();
             }
         }
     }

@@ -13,8 +13,6 @@ namespace MoneyMap.Components.Models
         public DateTime Date { get; set; } = DateTime.Now;
         public string Type { get; set; }
         public decimal Amount { get; set; }
-        public string DebtSource { get; set; }
-        public DateTime? DueDate { get; set; }
         public string Tags { get; set; }
         public string Notes { get; set; }
     }

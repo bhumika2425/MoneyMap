@@ -268,7 +268,6 @@ button[b-kf21b7leon] {
     }
 /* /Components/Pages/Dashboard.razor.rz.scp.css */
 .main-container[b-kgb0i96sf8] {
-
     margin-left: 230px;
     padding: 20px;
 }
@@ -694,7 +693,7 @@ body[b-otxoo4jwx2] {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f9fc;
+/*    background-color: #f7f9fc;*/
     display: flex;
     justify-content: center;
     align-items: center;
