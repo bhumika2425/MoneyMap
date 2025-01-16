@@ -14,7 +14,7 @@ namespace MoneyMap.Components.Models
         public string Status { get; set; }
         public int Amount { get; set; }
         public DateTime Date { get; set; } = DateTime.Now;
-        public DateTime DueDate { get; set; }
+        public DateTime DueDate { get; set; } = DateTime.Now;
         public bool IsCleared { get; set; }
 
         

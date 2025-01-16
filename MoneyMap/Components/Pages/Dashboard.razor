@@ -66,7 +66,8 @@
         </section>
         <div class="transactions-container">
             <section class="transactions-section">
-                <h3 style="margin-top: 50px;">Latest Transactions (5)</h3>
+                <h3 style="margin-top: 50px;">Latest Transactions</h3>
+                <div class="scrollable-table">
                 <table>
                     <thead>
                         <tr>
@@ -78,7 +79,7 @@
                         </tr>
                     </thead>
                     <tbody id="transactions-list">
-                        @foreach (var transaction in transactions.Take(5))
+                        @foreach (var transaction in transactions)
                         {
                             <tr>
                                 <td>@transaction.Title</td>
@@ -90,9 +91,12 @@
                         }
                     </tbody>
                 </table>
+                </div>
+                
             </section>
             <section class="transactions-section">
-                <h3 style="margin-top: 50px;">Pending Debts (5)</h3>
+                <h3 style="margin-top: 50px;">Pending Debts </h3>
+            <div class="scrollable-table">
                 <table>
                     <thead>
                         <tr>
@@ -103,7 +107,7 @@
                         </tr>
                     </thead>
                     <tbody id="transactions-list">
-                        @foreach (var debt in debts.Where(d => d.Status == "Pending").Take(5))
+                        @foreach (var debt in debts.Where(d => d.Status == "Pending"))
                         {
                             <tr>
                                 <td>@debt.Title</td>
@@ -114,6 +118,10 @@
                         }
                     </tbody>
                 </table>
+               
+            
+            </div>
+                
             </section>
         </div>
 

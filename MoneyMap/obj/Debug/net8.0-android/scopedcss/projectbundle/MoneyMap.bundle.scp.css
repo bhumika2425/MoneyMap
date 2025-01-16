@@ -275,7 +275,23 @@ button[b-kf21b7leon] {
 .heading[b-kgb0i96sf8] {
     font-weight: bold;
 }
+.scrollable-table[b-kgb0i96sf8] {
+    max-height: 300px; /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+}
 
+    /* Optional: Style the table to fit within the scrollable container */
+    .scrollable-table table[b-kgb0i96sf8] {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .scrollable-table th[b-kgb0i96sf8], .scrollable-table td[b-kgb0i96sf8] {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
 .stats[b-kgb0i96sf8] {
     display: flex;
     flex-wrap: wrap;
@@ -503,6 +519,7 @@ p[b-yfrfkzsodw] {
     font-size: 36px;
     color: #333;
 }
+
 
 .heading[b-yfrfkzsodw] {
     display: flex;

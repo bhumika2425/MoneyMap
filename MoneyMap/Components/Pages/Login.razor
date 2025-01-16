@@ -35,18 +35,18 @@
 
     private void HandleLogin()
     {
-        Navigation.NavigateTo("/dashboard");
         
-        // if (loginModel.Username == "bhumika" && loginModel.Password == "kc" && loginModel.PreferredCurrency == "NPR")
-        // {
-        //     Navigation.NavigateTo("/dashboard");
-        //     Console.WriteLine($"Login successful for {loginModel.Username} with currency {loginModel.PreferredCurrency}.");
-        // }
-        // else
-        // {
-        //     Set the flag to show error message
-        //     showErrorMessage = true;
-        //     Console.WriteLine("Incorrect username, password, or currency.");
-        // }
+        
+        if (loginModel.Username == "bhumika" && loginModel.Password == "kc" && loginModel.PreferredCurrency == "NPR")
+        {
+            Navigation.NavigateTo("/dashboard");
+            Console.WriteLine($"Login successful for {loginModel.Username} with currency {loginModel.PreferredCurrency}.");
+        }
+        else
+        {
+            // Set the flag to show error message
+            showErrorMessage = true;
+            Console.WriteLine("Incorrect username, password, or currency.");
+        }
     }
 }

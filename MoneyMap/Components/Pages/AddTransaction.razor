@@ -44,23 +44,23 @@
             <button @onclick="ToggleTagButton">
                 @if (isCustomTag)
                 {
-                    <span>Use default tag</span>
+                    <span>Use Default Tag</span>
 
                 }
                 else
                 {
-                    <span>Use custom tag</span>
+                    <span>Use Custom Tag</span>
                 }
             </button>
 
             @if (isCustomTag)
             {
-                <InputText @bind-Value="transaction.Tags" placeholder="enter custom tag"></InputText>
+                <InputText @bind-Value="transaction.Tags" placeholder="Enter Custom Tag"></InputText>
             }
             else
             {
                 <select id="tags" required @bind="transaction.Tags">
-                    <option value="" disabled selected>Select tag</option>
+                    <option value="" disabled selected>Use Default Tag</option>
                     <option value="rent">Rent</option>
                     <option value="salary">Salary</option>
                     <option value="food">Food</option>
