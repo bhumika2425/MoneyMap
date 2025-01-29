@@ -42,7 +42,6 @@
     {
         try
         {
-            // Generate a unique ID for the debt
             debt.Id = Guid.NewGuid().ToString();
             Debug.WriteLine($"Generated debt ID: {debt.Id}");
 
@@ -57,7 +56,7 @@
             var filePath = Path.Combine(baseDirectory, "debts.json");
             Debug.WriteLine($"Debts file path: {filePath}");
 
-            var debts = new List<DebtModel>();  // Change to DebtModel
+            var debts = new List<DebtModel>();  // empty list of debt model to hold debts
 
             // Check if the file already exists and load its content
             if (File.Exists(filePath))
@@ -70,7 +69,7 @@
                 {
                     try
                     {
-                        debts = JsonSerializer.Deserialize<List<DebtModel>>(json) ?? new List<DebtModel>();  // Deserialize to TransactionModel
+                        debts = JsonSerializer.Deserialize<List<DebtModel>>(json) ?? new List<DebtModel>();  // Deserialize json to debtModel
                         Debug.WriteLine($"Loaded {debts.Count} debts.");
                     }
                     catch (JsonException jsonEx)

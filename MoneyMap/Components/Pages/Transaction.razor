@@ -115,8 +115,7 @@
             var json = await File.ReadAllTextAsync(filePath);
             if (!string.IsNullOrWhiteSpace(json))
             {
-                transactions = JsonSerializer.Deserialize<List<TransactionModel>>(json) ?? new List<TransactionModel>();
-                // filteredTransactions = new List<TransactionModel>(transactions);  display all transactions but filters can be applied later
+                transactions = JsonSerializer.Deserialize<List<TransactionModel>>(json) ?? new List<TransactionModel>(); //Parses the JSON content into a list of TransactionModel objects. If parsing fails, initializes an empty list
                 filteredTransactions = transactions.OrderByDescending(t => t.Date).ToList();
             }
         }
@@ -160,10 +159,22 @@
         ).ToList();
     }
 
+    private bool isSortedAscending = false; // Flag to track sort order
+
     private void SortTransactions()
     {
-        filteredTransactions = filteredTransactions.OrderByDescending(t => t.Date).ToList();
+        if (isSortedAscending)
+        {
+            filteredTransactions = filteredTransactions.OrderByDescending(t => t.Date).ToList();
+        }
+        else
+        {
+            filteredTransactions = filteredTransactions.OrderBy(t => t.Date).ToList();
+        }
+
+        isSortedAscending = !isSortedAscending; // Toggle the flag
     }
+
 
     private void HandleAddButton()
     {

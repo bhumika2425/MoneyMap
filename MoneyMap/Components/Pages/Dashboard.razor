@@ -175,7 +175,7 @@
 
             var debtFilePath = Path.Combine(FileSystem.Current.AppDataDirectory, "DebtData", "debts.json");
             var debtJson = await File.ReadAllTextAsync(debtFilePath);
-            debts = string.IsNullOrWhiteSpace(debtJson) ? new List<DebtModel>() : JsonConvert.DeserializeObject<List<DebtModel>>(debtJson) ?? new List<DebtModel>();
+            debts = string.IsNullOrWhiteSpace(debtJson) ? new List<DebtModel>() : JsonConvert.DeserializeObject<List<DebtModel>>(debtJson) ?? new List<DebtModel>(); //converts jsn string to list is there is no list it returns empty list
 
             // Sort transactions and debts by Date in descending order
             transactions = transactions.OrderByDescending(t => t.Date).ToList();

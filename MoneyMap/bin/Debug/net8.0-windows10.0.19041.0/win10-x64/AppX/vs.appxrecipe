@@ -30,7 +30,7 @@
     <AppXManifest Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2025-01-16T18:30:53.723</Modified>
+      <Modified>2025-01-29T11:11:23.581</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -44,11 +44,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\MoneyMap.dll">
       <PackagePath>MoneyMap.dll</PackagePath>
-      <Modified>2025-01-16T18:30:52.976</Modified>
+      <Modified>2025-01-29T03:00:23.945</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>MoneyMap.exe</PackagePath>
-      <Modified>2025-01-16T18:30:53.029</Modified>
+      <Modified>2025-01-29T03:00:23.960</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhumi\source\repos\MoneyMap\MoneyMap\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
